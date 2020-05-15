@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Cung Nhathuocchuan.com bán hàng miễn phí</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://file.hstatic.net/1000287322/file/favicon_1_b09391da48434a18adff152c53967093.png" type="image/x-icon"/>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+
+</head>
+<body>
+   
+    <% include header%>
+    <% include sidebar%>
+
+<div style='height:50px'> </div>
+
+<div class="container">
+    <div class="row">
+                <div class="col-4 pb-5">
+                   <a href='/kenhcompany/addtpcn'>
+                <img src='https://cdn2.iconfinder.com/data/icons/health-natural-medical/512/Health-05-512.png' style='width:50px'>
+                Thêm TPCN 
+                </a> 
+                  
+                </div>
+                <div class="col-4 pb-5">
+                <a href='/kenhcompany/addmypham'>
+                <img src='https://image.flaticon.com/icons/svg/273/273284.svg' style='width:50px'>
+                Thêm Mỹ Phẩm 
+                </a> 
+
+                </div>
+
+                <div class="col-4 pb-5">
+                    <a href='#'>
+                <img src='https://comps.canstockphoto.com/colored-stethoscope-icon-medical-vector-clipart_csp64865609.jpg' style='width:50px'>
+                Thêm Thiết Bị Y Tế 
+                </a> 
+                </div>
+                
+                
+    </div>
+       
+       <%var dmuc=company.danhsachsp%>
+
+    <div class="container pt-5">
+    	<h2 class="pb-3">Danh Sách Sản Phẩm</h2>
+    	<div class="row">
+            <%dmuc.forEach(function(item){
+            var m=item.socongbo.toLowerCase().split('/').join('').split('đ').join('d');
+             let kt = productserver.find(function(item2){
+                return item2.socongbo === item.socongbo;
+                });
+            let linkhinh="https://file.hstatic.net/1000287322/file/updating_4b3e39ad13974b06bd99d80bb44a2218.png";
+            if (kt) {linkhinh=kt.linkhinh}        
+            if (item.linkhinh !== "https://file.hstatic.net/1000287322/file/updating_4b3e39ad13974b06bd99d80bb44a2218.png") {linkhinh = item.linkhinh};
+             %>
+            <div class="col-4 col-sm-3 col-lg-2 border border-dark">
+                <a href="/kenhcompany/sua/<%=m%>">
+                    <img src="<%=linkhinh%>" style="width:64px;" />
+                    <p><%=item.tensanpham%></p>
+                </a>
+                <p><%=item.giaban%></p>
+                   <br>
+                
+                <a onclick="return confirm('Bạn có chắc chắn xóa <%=item.tensanpham%> không?')" href="/kenhcompany/xoa/<%=m%>">Xóa</a>
+                <p></p>
+                
+            </div>
+            <%});%>
+        </div>
+            
+        	
+ 
+</div>
+<br/><br/><br/>
+<hr/>
+<hr/>
+</body>
+</html>

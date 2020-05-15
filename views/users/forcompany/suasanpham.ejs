@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Cung Nhathuocchuan.com bán hàng miễn phí</title>
+<link rel="icon" href="https://file.hstatic.net/1000287322/file/favicon_1_b09391da48434a18adff152c53967093.png" type="image/x-icon"/>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <% include header%>
+    <% include sidebar%>
+<div class="container  bg-light text-dark">
+	<div style='height:50px'> </div>
+    <h1>Sửa Sản Phẩm</h1>
+	<form method="POST" style='width: 84%; margin-left: 8%; margin-top: 50px'>
+        <div style='width: 80px'>
+            <img src="<%=values.linkhinh%>" style='width: 80px'>
+        </div>
+
+        <h3>Tên Sản Phẩm</h3>
+        <p><%=values.tensanpham%></p>
+     
+    
+        <h3>Số Công Bố: SCB / Năm công bố :</h3>
+        <p><%=values.socongbo%></p>
+
+        <input type="text" style="display: none" name="socongbo" value="<%=values.socongbo%>">
+       
+        <div class="form-group">
+        	<label>Giá Bán</label>
+            <input class="form-control" id="giaban" name="giaban" value="<%=values.giaban%>" type="number" />
+        </div>
+		<button>Sửa</button>
+      </form>
+ </div>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+</body>
+</html>

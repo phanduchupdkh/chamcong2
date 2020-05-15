@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Cung Nhathuocchuan.com bán hàng miễn phí</title>
+<link rel="icon" href="https://file.hstatic.net/1000287322/file/favicon_1_b09391da48434a18adff152c53967093.png" type="image/x-icon"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+
+</head>
+<body>
+   
+<% include header%>
+<% include sidebar%>
+    <div class="container">
+        <h3>Thông tin nhà thuốc</h3>
+        <p>Họ Và Tên: <%=user.name%> </p> 
+
+        <p>Số Điện Thoại: <%=user.phone%></p> 
+
+        <p>Email: <%=user.email%>  </p>       
+        <p>Tên Nhà Thuốc: <%=user.tennhathuoc%> </p> 
+        <p>Địa Chỉ: <%=user.address%> - <%=user.xaphuong%> - <%=user.quanhuyen%> <%=user.tinhthanh%></p>   
+
+        <p><a href="/kenhnhathuoc/suathongtin">Sửa Đổi Thông Tin</a>  </p>
+        <p><a href="/kenhnhathuoc/doimatkhau">Đổi mật khẩu</a></p>
+    </div>
+
+      
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head lang="vi">
+    <% include googleana%>
+    <meta charset="utf-8">
+    <link rel="icon" href="https://file.hstatic.net/1000287322/file/favicon_1_b09391da48434a18adff152c53967093.png" type="image/x-icon"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- HTML Meta Tags -->
+<title>Thuốc <%=sanpham.tensanpham%> giá bao nhiêu mua ở đâu  tại <%=quanhuyen%> <%=tinhthanh%> </title>
+<meta name="description" content="thuốc <%=sanpham.tensanpham%> mua ở đâu tại <%=quanhuyen%> <%=tinhthanh%>">
+<meta name="keywords" content="thuốc <%=sanpham.tensanpham%> mua ở đâu tại <%=quanhuyen%> <%=tinhthanh%>">
+ 
+<!-- Google / Search Engine Tags -->
+<meta itemprop="name" content="thuốc <%=sanpham.tensanpham%> mua ở đâu tại <%=quanhuyen%> <%=tinhthanh%>">
+<meta itemprop="description" content="thuốc <%=sanpham.tensanpham%> mua ở đâu tại <%=quanhuyen%> <%=tinhthanh%>">
+<meta itemprop="image" content="<%=linkhinh%>">
+ 
+<!-- Facebook Meta Tags -->
+<meta property="og:url" content="https://banhang.nhathuocchuan.com/<%=sanpham.tensanpham%>">
+<meta property="og:type" content="nhathuocchuan">
+<meta property="og:title" content="thuốc <%=sanpham.tensanpham%> mua ở đâu tại <%=quanhuyen%> <%=tinhthanh%>">
+<meta property="og:description" content="thuốc <%=sanpham.tensanpham%> mua ở đâu tại <%=quanhuyen%> <%=tinhthanh%>">
+<meta property="og:image" content="<%=linkhinh%>">
+<meta property="og:keywords" content="<%=sanpham.tensanpham%>, <%=quanhuyen%>, <%=tinhthanh%>">
+ 
+<!-- Twitter Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="thuốc <%=sanpham.tensanpham%> mua ở đâu tại <%=quanhuyen%> <%=tinhthanh%>">
+<meta name="twitter:site" content="nhathuocchuan">
+<meta name="twitter:description" content="thuốc <%=sanpham.tensanpham%> mua ở đâu tại <%=quanhuyen%> <%=tinhthanh%>">
+<meta name="twitter:image" content="<%=linkhinh%>">
+<!-- SEO meta tags -->
+
+</head>
+
+<body>
+   <% include headernt%>
+     <br/>
+     <p><i class="glyphicon glyphicon-shopping-cart"></i></p>
+<div class="container">
+
+    <br/>  <br/>  <br/>
+    <div class="row">
+            <div class="col-sm-4">
+                <img src="<%=linkhinh%>" alt= "thuốc <%=sanpham.tensanpham%>" style='width: 80%'>
+            </div>
+            <div class='col-sm-8'>
+                <strong><%=sanpham.tensanpham%></strong>
+                <p>Giá: <%=sanpham.giaban.slice(0,-3).concat(".",sanpham.giaban.slice(-3))%> VND</p>
+                <p>Liên hệ: <%=nhathuoc.phone%></p>
+                
+                <form action="/cart/add" method="POST">
+                    <input type="number" value="1" id="tentacles" name="tentacles" min="1" max="100">
+                    <input class="d-none" value="<%=nhathuoc.idnt%>" name="idnhathuoc">
+                    <input class="d-none" value="<%=sanpham.url%>" name="urlsp">
+
+                    <button class="btn btn-warning">
+                        <img style="width:25px" src="https://image.flaticon.com/icons/svg/134/134561.svg" atl="chọn mua">
+                         Chọn Mua
+                    </button> 
+                </form>
+                <p class="pt-4">Địa chỉ: <%=nhathuoc.address%> - <%=xaphuong%> - <%=quanhuyen%> - <%=tinhthanh%></p>
+            </div>
+    </div>	
+    <br/>
+    <hr/>
+    <div class='row'>
+        <div class="col-sm-12">
+                <h1>Mua bán <%=sanpham.tensanpham%> ở đâu giá bao nhiêu tại <%=quanhuyen%> <%=tinhthanh%>? </h1>
+                <p>Loại Sản Phẩm: <%=sanpham.loaisanpham%></p>  
+                <p>Số công bố: <%=sanpham.socongbo%></p>
+                
+                <br/>
+                 <h2>Để mua sản phẩm <strong><%=sanpham.tensanpham%></strong> xin vui lòng:</h2>
+
+                <p>Cách 1: Đến trực tiếp nhà thuốc <%=nhathuoc.tennhathuoc%> tại địa chỉ: <%=nhathuoc.address%> - <%=xaphuong%> - <%=quanhuyen%> - <%=tinhthanh%> để được tư vấn với dược sĩ nhà thuốc.</p>
+
+                <p>Cách 2: Gọi điện thoại đến nhà thuốc theo số điện thoại <%=nhathuoc.phone%> để kiểm tra tình trạng còn của sản phẩm và đặt hàng.</p>
+                <p>Mua <strong><%=sanpham.tensanpham%></strong> chính hãng, uy tín tại: nhà thuốc  <%=nhathuoc.tennhathuoc%> – Nhà thuốc uy tín đạt chuẩn của bộ y tế.
+                </p>
+                <p>Bạn khó khăn trong việc tìm nhà thuốc bán <%=sanpham.tensanpham%> tại <%=quanhuyen%> - <%=tinhthanh%> ? Bạn nên tham khảo những gợi ý sau đây để biết được đơn vị, nhà thuốc mua bán <%=sanpham.tensanpham%> uy tín.
+                </p>
+                <h2>Mua <%=sanpham.tensanpham%> ở đâu tại <%=quanhuyen%> - <%=tinhthanh%>? </h2>
+                <p>Hiện nay việc tìm kiếm địa chỉ mua <%=sanpham.tensanpham%> tại <%=tinhthanh%> thật đơn giản. Chỉ cần lên Google và search: <%=sanpham.tensanpham%>, nhà thuốc bán <%=sanpham.tensanpham%> tại <%=quanhuyen%> - <%=tinhthanh%> hoặc ở đâu bán <%=sanpham.tensanpham%> 
+                 Rất nhiều địa chỉ bán hàng hiện ra. Nhưng bạn hãy cẩn thận với những mẫu quảng cáo thiếu sự thật, có thể bạn sẽ mua phải hàng giả, hàng nhái, hàng kém chất lượng nếu bạn chọn phải một nơi bán kém uy tín. Vì vậy hãy tìm cho mình một đơn vị mua bán <%=sanpham.tensanpham%> uy tín, chất lượng như nhà thuốc <%=nhathuoc.tennhathuoc%>. </p>
+
+                Nhà thuốc <%=nhathuoc.tennhathuoc%>: <%=nhathuoc.address%> - <%=xaphuong%> - <%=quanhuyen%> - <%=tinhthanh%> địa chỉ uy tín cho bạn.
+
+                Điện thoai tư vấn: <%=nhathuoc.phone%>
+               <ul class="d-none"> <h3>Lý do nên mua <%=sanpham.tensanpham%> tại nhà thuốc <%=nhathuoc.tennhathuoc%> :</h3>
+                
+                <li><h4>Bạn sẽ mua được sản phẩm chính hãng, chất lượng </h4></li>
+
+                <p>Nhà Thuốc <%=nhathuoc.tennhathuoc%>  là nhà thuốc đạt chuẩn GPP, nghĩa là mọi sản phẩm đang bán tại <%=nhathuoc.tennhathuoc%> phải là chính hãng, nguyên gốc, do những công ty uy tín sản xuất và nhập khẩu; không có sản phẩm trôi nổi không rõ nguồn gốc không đảm bảo chất lượng.
+                </p>
+                <li><h4>Bạn sẽ mua được sản phẩm được bảo quản và lưu trữ đúng chuẩn </h4></li>
+
+                Mối lo ngại về nguồn gốc đã được loại bỏ, nhưng có một yếu tố quan trọng mà chúng ta thường bỏ qua, đó là điều kiện bảo quản để giữ được chất lượng như ban đầu.
+
+                Nhà thuốc <%=nhathuoc.tennhathuoc%> chú trọng trang bị đầy đủ thiết bị để bảo quản ở điều kiện tốt nhất, tránh được các ảnh hưởng bất lợi của ánh sáng, nhiệt độ, độ ẩm, sự ô nhiễm, sự xâm nhập của côn trùng,v.v.; đặc biệt ở xứ sở nhiệt đới như Việt Nam thì các điều kiện bảo quản này càng đóng vai trò quan trọng.
+
+                <li><h4>Bạn sẽ được tư vấn tận tình từ đội ngũ dược sĩ giàu kinh nghiệm </h4></li>
+
+                <p>Đội ngũ dược sĩ, nhân viên y tế tại Nhà Thuốc <%=nhathuoc.tennhathuoc%> là những người vững chuyên môn, hiểu rõ về sản phẩm cũng như đã có kinh nghiệm tư vấn cho hàng ngàn khách hàng nên sẽ giúp bạn chọn lựa được sản phẩm tốt và phù hợp với bạn và người thân nhất. Ngoài ra, các dược sĩ và nhân viên y tế của Nhà Thuốc <%=nhathuoc.tennhathuoc%> cũng sẵn sàng tư vấn cho bạn trong và sau quá trình sử dụng.</p>
+              </ul>     
+        </div> 
+    </div> 
+</div> 
+        <hr/>
+        
+        <div class="container mt-5">
+            <%if (cotrensv =="true") {%>
+            <h4 class="mb-5">Nhà thuốc khác cũng bán: <strong><%=sanpham.tensanpham%></strong> <a href="/productsv/<%=urlsv%>">Click để xem</a></h4> 
+            <%}%>
+            <h4>Sản phẩm khác </h4> 
+            
+            <div class="row">
+                <%nhathuoc.danhsachsp.slice(0,3).forEach(function(item){%>
+                <div class="col-sm-4">
+                    <a href="/nhathuoc/<%=nhathuoc.idnt%>/<%=item.url%>">
+                        <img style="width:50%" src="<%=item.linkhinh%>" alt="<%=item.tensanpham%>">
+                    
+                        <p><%=item.tensanpham%></p>
+                    </a>
+                    <p><%=item.giaban.slice(0,-3).concat(".",item.giaban.slice(-3))%> VND</p>
+                </div>
+                <%})%>
+                  
+            </div>
+    </div>  
+      
+      
+		
+   
+      <p style="clear: both"></p>
+      
+        <br/>
+         <% include danhgianhathuoc%>
+        <br/>        
+        <hr/>
+        <hr/>
+    <% include footer%>
+    <div class="pt-5 pb-5"></div>
+</body>
+</html>

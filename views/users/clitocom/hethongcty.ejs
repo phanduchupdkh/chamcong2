@@ -1,0 +1,38 @@
+<html>
+	 <head>
+	 	<% include googleana%>
+	 	<link rel="icon" href="https://file.hstatic.net/1000287322/file/favicon_1_b09391da48434a18adff152c53967093.png" type="image/x-icon"/>
+	 	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+	</head>
+	<body>
+		<% include header%> 
+			<br/>
+			<br/>
+		<div class="container">	
+			<hr>
+				<h3>Các nhà phân phối: </h3>
+				<br/>
+				<div class="row">
+					<%companys.forEach(function(item){%>
+					<div class="col-6 col-sm-4 col-md-3 border border-muted">
+		        		<p><a href="/congty/<%=item.idcomp%>"><%=item.tencongty%></a></p>
+		        		<p>Hotline: <%=item.phone%></p>
+		       			<p><%=item.addresscty%></p>
+					</div>
+						<%});%>
+				</div>
+		</div>
+    	
+    	<p style="clear: both"></p>
+    	<br/>
+    	<br/>
+    	<br/>
+    	<hr/>
+    	<hr/>
+    	<% include footer%>
+
+	</body>
+
+</html>

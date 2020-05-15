@@ -1,0 +1,36 @@
+
+<html>
+	 <head>
+	    <meta charset="utf-8">
+    <link rel="icon" href="https://file.hstatic.net/1000287322/file/favicon_1_b09391da48434a18adff152c53967093.png" type="image/x-icon"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!-- HTML Meta Tags -->
+<title>thuốc chuẩn mua ở đâu</title>
+	</head>
+	<body>
+		<h2><strong>Xuân Đức giáo chủ!</strong></h2>
+		 <p> Thiên thu vạn tái, nhất thống giang hồ</p>
+		 
+	<div class="container">
+	<h1>Đơn hàng: <%=donhangs.length%></h1>
+		<div class="row pt-3">
+			<%donhangs.forEach(function(item){%>
+	            <div class="col-6 col-sm-4 col-md-3 border border-muted">
+		            <p>Url: <%=item.url%></p>
+		            <p>Datetime: <%=item.datetime%></p>
+		            <p>Tên sp: <%=item.tensanpham%></p>
+		            <p>Tên Khách hàng:  <%=item.name%></p>
+		            <p>Số Đt khách:  <%=item.phone%></p>
+		            <p>Địa chỉ khách:  <%=item.address%></p>
+		            <p>Email khách:  <%=item.email%></p>
+		            <p>Số lượng đặt: <%=item.soluong%></p>
+		            <p>Tổng tiền: <%=item.tongtien%></p>
+		            <p>UserId: <%=item.userId%></p>
+	            </div>
+	        <%});%>
+        </div>
+    </div>
+	</body>
+
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Cung Nhathuocchuan.com bán hàng miễn phí</title>
+<link rel="icon" href="https://file.hstatic.net/1000287322/file/favicon_1_b09391da48434a18adff152c53967093.png" type="image/x-icon"/>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+   	<% include header%>
+    <% include sidebar%>
+	<div style='height:50px'> </div>
+	<a href='#' style='margin: 50px 10% '>
+            	<img src='https://nest.com/support/images/misc-assets-icons/add-product-icon.png' style='width:50px'>
+            	Thêm Mỹ Phẩm
+            	</a>
+        <div class="form-group" style='width: 84%; margin-left: 8%; margin-top: 50px'>
+            <label>Tải Hình ảnh lên </label><br/>
+            <input type="file" value="uploader" id="fileButton" name="linkhinh">
+            <img id="hinhanh" src="" style="width: 200px; display: none">
+        </div>
+	<form method="POST" style='width: 84%; margin-left: 8%;'>
+        <div class="form-group">
+        	<label>Tên Sản Phẩm</label>
+            <input class="form-control" id="tensanpham" name="tensanpham" placeholder="Tên Sản Phẩm" type="text" value="<%=values==''?values:values.tensanpham%>" required/>
+        </div>
+        <div class="form-group">
+            <label>Số Công Bố: SCB / Năm công bố :</label> <br/>
+            <input  id="socongbo" name="socongbo" placeholder="VD:2544/18" type="text" value="<%=values==''?values:values.socongbo%>" required/> 
+            <select class="field-input" id="kieuscb" name="kieuscb">
+                <option value="/CBMP-QLD" selected>CBMP-QLD</option>
+            </select>
+        </div>
+        <%if (errors!==""){%>
+        <div class="alert alert-danger"><%=errors%></div>
+        <%};%>
+        <div class="form-group">
+            <label>Chọn Phân Loại : </label>
+            <select class="field-input" id="loaisanpham" name="loaisanpham">
+                <option value="Mỹ Phẩm Khác" selected>Mỹ Phẩm Khác</option>
+                <option value="Kem HT Trị Thâm Mụn">Kem HT Trị Thâm Mụn</option>
+                <option value="Chống nắng trị nám">Chống nắng trị nám</option>
+                <option value="Sản Phẩm Dành Cho Tóc">Sản Phẩm Dành Cho Tóc</option>
+                <option value="chăm sóc da">chăm sóc da</option>
+                <option value="Dưỡng thể collagen">Dưỡng thể collagen</option>
+                <option value="Nước hoa">Nước hoa</option>
+                <option value="Sơn móng rửa móng">Sơn móng rửa móng</option>
+                <option value="Mỹ phẩm nam">Mỹ phẩm nam</option>
+                <option value="Tinh dầu thiên nhiên">Tinh dầu thiên nhiên</option>
+                <option value="Tuyển tập son môi">Tuyển tập son môi</option>
+                <option value="Kem Làm Mờ Sẹo">Kem Làm Mờ Sẹo</option>
+                <option value="Kem Tan Mỡ">Kem Tan Mỡ</option>
+                <option value="Kem Làm Trắng Da">Kem Làm Trắng Da</option>
+            </select>
+        </div>
+        <div class="form-group">
+        	<label>Giá Bán</label>
+            <input class="form-control" id="giaban" name="giaban" placeholder="Giá Bán (VNĐ)" type="number" />
+        </div>
+        <input style= "display:none" type="text" value="https://file.hstatic.net/1000287322/file/updating_4b3e39ad13974b06bd99d80bb44a2218.png" id="linkhinh" name="linkhinh">
+		<button>Lưu Trữ</button>
+      </form>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+    apiKey: "AIzaSyDXRS2qD8qI0_BWKmUt4UCeV5o_V1XFjEE",
+    authDomain: "dainam-96b9c.firebaseapp.com",
+    databaseURL: "https://dainam-96b9c.firebaseio.com",
+    projectId: "dainam-96b9c",
+    storageBucket: "dainam-96b9c.appspot.com",
+    messagingSenderId: "959430104014"
+    };
+    firebase.initializeApp(config);
+    //get element 
+    var uploader = document.getElementById("uploader");
+    var fileButton = document.getElementById("fileButton");
+    var hinhanh = document.getElementById("hinhanh");
+    var linkhinh = document.getElementById("linkhinh");
+
+    //Listen for file sellection 
+    fileButton.addEventListener("change", function(e){
+      //Get file 
+      console.log(e.target.files)
+      var file = e.target.files[0];
+      //Create a storage ref
+      var moonLanding = new Date();
+      let m = moonLanding.getTime();
+      const n = m+"-"+file.name;
+      storageRef = firebase.storage().ref("imgp/"+n);
+
+      //uploade file 
+      var task =  storageRef.put(file);
+      // update Progess bar 
+    task.then(function(value){
+      let img = 'https://firebasestorage.googleapis.com/v0/b/dainam-96b9c.appspot.com/o/imgp%2F'+n+'?alt=media'
+      hinhanh.src = img;
+      hinhanh.style = 'width: 200px; display: block';
+      linkhinh.value = img;
+    })
+    });
+    </script>
+</body>
+</html>

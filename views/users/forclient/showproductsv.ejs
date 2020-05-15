@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html>
+<head lang="vi">
+    <% include googleana%>
+    <meta charset="utf-8">
+    <link rel="icon" href="https://file.hstatic.net/1000287322/file/favicon_1_b09391da48434a18adff152c53967093.png" type="image/x-icon"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- HTML Meta Tags -->
+<title>Thuốc <%=sanpham.tensanpham%> mua ở đâu giá bao nhiêu? </title>
+<meta name="description" content="<%=sanpham.tensanpham%> mua ở đâu giá bao nhiêu?">
+<meta name="keywords" content="<%=sanpham.tensanpham%>  mua ở đâu giá bao nhiêu?  tại Tphcm">
+ 
+<!-- Google / Search Engine Tags -->
+<meta itemprop="name" content="<%=sanpham.tensanpham%> mua ở đâu giá bao nhiêu? tại Tphcm">
+<meta itemprop="description" content="<%=sanpham.tensanpham%> mua ở đâu giá bao nhiêu tại Tphcm">
+<meta itemprop="image" content="<%=sanpham.linkhinh%>">
+ 
+<!-- Facebook Meta Tags -->
+<meta property="og:url" content="https://banhang.nhathuocchuan.com/<%=sanpham.tensanpham%>">
+<meta property="og:type" content="nhathuocchuan">
+<meta property="og:title" content="thuốc <%=sanpham.tensanpham%>  mua ở đâu giá bao nhiêu? tại Tphcm">
+<meta property="og:description" content="thuốc <%=sanpham.tensanpham%> mua ở đâu giá bao nhiêu tại Tphcm">
+<meta property="og:image" content="<%=sanpham.linkhinh%>">
+<meta property="og:keywords" content="thuốc <%=sanpham.tensanpham%>, mua ở đâu, giá bao nhiêu?,Tphcm">
+ 
+<!-- Twitter Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="<%=sanpham.tensanpham%> mua ở đâu giá bao nhiêu?  tại Tphcm">
+<meta name="twitter:site" content="nhathuocchuan">
+<meta name="twitter:description" content="<%=sanpham.tensanpham%> mua ở đâu giá bao nhiêu tại Tphcm">
+<meta name="twitter:image" content="<%=sanpham.linkhinh%>">
+<!-- SEO meta tags -->
+
+</head>
+
+<body>
+   <% include header%>
+
+   <br/>
+<h1 class="d-none">thuốc <%=sanpham.tensanpham%> mua ở đâu giá bao nhiêu? </h1>
+
+    <div class="container">
+        <div  id="vetop" class="row">
+            <div class="col-sm-4">
+                <img src="<%=sanpham.linkhinh%>" alt= "thuốc <%=sanpham.tensanpham%>" style='width: 80%'>
+                </div>
+                <div class='col-sm-8'> 
+                <strong><%=sanpham.tensanpham%></strong>
+                <p>Giá: <%=sanpham.giaban.slice(0,-3).concat(".",sanpham.giaban.slice(-3))%> VND</p>
+                <p>Số Công Bố: <%=sanpham.socongbo%></p>
+            </div>
+        </div> 
+    </div> 
+
+    <div class="container"> 
+            <hr>
+            <h2>Ấn vào nơi bạn sinh sống để biết địa chỉ gần nhất bán <%=sanpham.tensanpham%> </h2>
+            <div class="row">
+                <div class="col-6 col-md-4">
+                    <a href="#"> Hà Nội </a>
+                </div>
+                <div class="col-6 col-md-4">
+                    <a href="#tphcm">TP Hồ Chí Minh</a>
+                </div>
+                <div class="col-6 col-md-4">
+                   <a href="#"> Miền Bắc</a>
+                </div>
+                <div class="col-6 col-md-4">
+                   <a href="#"> Bắc Trung Bộ</a>
+                </div>
+                <div class="col-6 col-md-4">
+                    <a href="#">Nam Trung Bộ</a>
+                </div>
+                <div class="col-6 col-md-4">
+                    <a href="#">Tây Nguyên</a>
+                </div>
+                <div class="col-6 col-md-4">
+                    <a href="#">Đông Nam Bộ</a>
+                </div>
+                <div class="col-6 col-md-4">
+                    <a href="#">Tây Nam Bộ</a>
+                </div>
+            </div>
+<p class="pt-5 pb-5"><strong>Xem chi tiết dưới đây:</strong></p>
+
+
+        <div id="tphcm">
+                <h3 class="d-none">Nơi bán <%=sanpham.tensanpham%> tại TP Hồ Chí Minh</h3>
+                <p class="pb-2"><strong>Tại TP Hồ Chí Minh</strong></p>
+        </div>
+
+                <h4>Tại Quận Thủ Đức</h4>
+                <div class="row">
+                    <%var dansachqh = dansachnt.filter(function(item){return item.maquanhuyen==="h762"})%>
+
+                    <%dansachqh.forEach(function(item){%>
+                    <div class="col-6 col-sm-4 col-md-3 border border-muted">
+                        <p>Nhà Thuốc: <a href="/nhathuoc/<%=item.idnt%>/<%=item.url%>"><%=item.tennhathuoc%></a></p>
+                        <p>Số điện thoại: <%=item.phone%></p>
+<%var chgia = item.giaban.slice(0,-3).concat(".",item.giaban.slice(-3))%>
+                        <p>Giá bán: <strong><%=chgia%></strong>  VNĐ</p>
+                        <p><%=item.address%>-<%=item.xaphuong%>-<%=item.quanhuyen%>-<%=item.tinhthanh%></p>
+                    </div>
+                        <%});%>
+                </div>
+<hr>
+                <h4>Tại Quận Tân Phú</h4>
+                <div class="row">
+                    <%dansachqh = dansachnt.filter(function(item){return item.maquanhuyen==="h767"})%>
+
+                    <%dansachqh.forEach(function(item){%>
+                    <div class="col-6 col-sm-4 col-md-3 border border-muted">
+                        <p>Nhà Thuốc: <a href="/nhathuoc/<%=item.idnt%>/<%=item.url%>"><%=item.tennhathuoc%></a></p>
+                        <p>Số điện thoại: <%=item.phone%></p>
+<%var chgia = item.giaban.slice(0,-3).concat(".",item.giaban.slice(-3))%>
+                        <p>Giá bán: <strong><%=chgia%></strong>  VNĐ</p>
+                        <p><%=item.address%>-<%=item.xaphuong%>-<%=item.quanhuyen%>-<%=item.tinhthanh%></p>
+                    </div>
+                        <%});%>
+                </div>
+<hr>
+                <h4>Tại Quận Tân Bình</h4>
+                <div class="row">
+                    <%dansachqh = dansachnt.filter(function(item){return item.maquanhuyen==="h766"})%>
+
+                    <%dansachqh.forEach(function(item){%>
+                    <div class="col-6 col-sm-4 col-md-3 border border-muted">
+                        <p>Nhà Thuốc: <a href="/nhathuoc/<%=item.idnt%>/<%=item.url%>"><%=item.tennhathuoc%></a></p>
+                        <p>Số điện thoại: <%=item.phone%></p>
+<%var chgia = item.giaban.slice(0,-3).concat(".",item.giaban.slice(-3))%>
+                        <p>Giá bán: <strong><%=chgia%></strong>  VNĐ</p>
+                        <p><%=item.address%>-<%=item.xaphuong%>-<%=item.quanhuyen%>-<%=item.tinhthanh%></p>
+                    </div>
+                        <%});%>
+                </div>
+
+<hr>
+                <h4>Tại Quận Phú Nhuận</h4>
+                <div class="row">
+                    <%dansachqh = dansachnt.filter(function(item){return item.maquanhuyen==="h768"})%>
+
+                    <%dansachqh.forEach(function(item){%>
+                    <div class="col-6 col-sm-4 col-md-3 border border-muted">
+                        <p>Nhà Thuốc: <a href="/nhathuoc/<%=item.idnt%>/<%=item.url%>"><%=item.tennhathuoc%></a></p>
+                        <p>Số điện thoại: <%=item.phone%></p>
+<%var chgia = item.giaban.slice(0,-3).concat(".",item.giaban.slice(-3))%>
+                        <p>Giá bán: <strong><%=chgia%></strong>  VNĐ</p>
+                        <p><%=item.address%>-<%=item.xaphuong%>-<%=item.quanhuyen%>-<%=item.tinhthanh%></p>
+                    </div>
+                        <%});%>
+                </div>
+
+<hr>
+                <h4>Tại Quận Gò Vấp</h4>
+                <div class="row">
+                    <%dansachqh = dansachnt.filter(function(item){return item.maquanhuyen==="h764"})%>
+
+                    <%dansachqh.forEach(function(item){%>
+                    <div class="col-6 col-sm-4 col-md-3 border border-muted">
+                        <p>Nhà Thuốc: <a href="/nhathuoc/<%=item.idnt%>/<%=item.url%>"><%=item.tennhathuoc%></a></p>
+                        <p>Số điện thoại: <%=item.phone%></p>
+<%var chgia = item.giaban.slice(0,-3).concat(".",item.giaban.slice(-3))%>
+                        <p>Giá bán: <strong><%=chgia%></strong>  VNĐ</p>
+                        <p><%=item.address%>-<%=item.xaphuong%>-<%=item.quanhuyen%>-<%=item.tinhthanh%></p>
+                    </div>
+                        <%});%>
+                </div>
+<hr>
+
+                <h4>Tại Quận Bình Thạnh</h4>
+                <div class="row">
+                    <%dansachqh = dansachnt.filter(function(item){return item.maquanhuyen==="h765"})%>
+
+                    <%dansachqh.forEach(function(item){%>
+                    <div class="col-6 col-sm-4 col-md-3 border border-muted">
+                        <p>Nhà Thuốc: <a href="/nhathuoc/<%=item.idnt%>/<%=item.url%>"><%=item.tennhathuoc%></a></p>
+                        <p>Số điện thoại: <%=item.phone%></p>
+<%var chgia = item.giaban.slice(0,-3).concat(".",item.giaban.slice(-3))%>
+                        <p>Giá bán: <strong><%=chgia%></strong>  VNĐ</p>
+                        <p><%=item.address%>-<%=item.xaphuong%>-<%=item.quanhuyen%>-<%=item.tinhthanh%></p>
+                    </div>
+                        <%});%>
+                </div>
+
+<hr>
+
+                <h4>Tại Quận Bình Tân</h4>
+                <div class="row">
+                    <%dansachqh = dansachnt.filter(function(item){return item.maquanhuyen==="h777"})%>
+
+                    <%dansachqh.forEach(function(item){%>
+                    <div class="col-6 col-sm-4 col-md-3 border border-muted">
+                        <p>Nhà Thuốc: <a href="/nhathuoc/<%=item.idnt%>/<%=item.url%>"><%=item.tennhathuoc%></a></p>
+                        <p>Số điện thoại: <%=item.phone%></p>
+<%var chgia = item.giaban.slice(0,-3).concat(".",item.giaban.slice(-3))%>
+                        <p>Giá bán: <strong><%=chgia%></strong>  VNĐ</p>
+                        <p><%=item.address%>-<%=item.xaphuong%>-<%=item.quanhuyen%>-<%=item.tinhthanh%></p>
+                    </div>
+                        <%});%>
+                </div>
+
+<hr>
+                <h4>Tại Quận 1</h4>
+                <div class="row">
+                    <%dansachqh = dansachnt.filter(function(item){return item.maquanhuyen==="h760"})%>
+
+                    <%dansachqh.forEach(function(item){%>
+                    <div class="col-6 col-sm-4 col-md-3 border border-muted">
+                        <p>Nhà Thuốc: <a href="/nhathuoc/<%=item.idnt%>/<%=item.url%>"><%=item.tennhathuoc%></a></p>
+                        <p>Số điện thoại: <%=item.phone%></p>
+<%var chgia = item.giaban.slice(0,-3).concat(".",item.giaban.slice(-3))%>
+                        <p>Giá bán: <strong><%=chgia%></strong>  VNĐ</p>
+                        <p><%=item.address%>-<%=item.xaphuong%>-<%=item.quanhuyen%>-<%=item.tinhthanh%></p>
+                    </div>
+                        <%});%>
+                </div>
+<hr>
+                <h4>Tại Quận 2</h4>
+                <div class="row">
+                    <%dansachqh = dansachnt.filter(function(item){return item.maquanhuyen==="h769"})%>
+
+                    <%dansachqh.forEach(function(item){%>
+                    <div class="col-6 col-sm-4 col-md-3 border border-muted">
+                        <p>Nhà Thuốc: <a href="/nhathuoc/<%=item.idnt%>/<%=item.url%>"><%=item.tennhathuoc%></a></p>
+                        <p>Số điện thoại: <%=item.phone%></p>
+<%var chgia = item.giaban.slice(0,-3).concat(".",item.giaban.slice(-3))%>
+                        <p>Giá bán: <strong><%=chgia%></strong>  VNĐ</p>
+                        <p><%=item.address%>-<%=item.xaphuong%>-<%=item.quanhuyen%>-<%=item.tinhthanh%></p>
+                    </div>
+                        <%});%>
+                </div>
+
+<hr>
+                <h4>Tại Quận 3</h4>
+                <div class="row">
+                    <%dansachqh = dansachnt.filter(function(item){return item.maquanhuyen==="h770"})%>
+
+                    <%dansachqh.forEach(function(item){%>
+                    <div class="col-6 col-sm-4 col-md-3 border border-muted">
+                        <p>Nhà Thuốc: <a href="/nhathuoc/<%=item.idnt%>/<%=item.url%>"><%=item.tennhathuoc%></a></p>
+                        <p>Số điện thoại: <%=item.phone%></p>
+<%var chgia = item.giaban.slice(0,-3).concat(".",item.giaban.slice(-3))%>
+                        <p>Giá bán: <strong><%=chgia%></strong>  VNĐ</p>
+                        <p><%=item.address%>-<%=item.xaphuong%>-<%=item.quanhuyen%>-<%=item.tinhthanh%></p>
+                    </div>
+                        <%});%>
+                </div>
+<hr>
+
+                <h4>Tại Quận 4</h4>
+                <div class="row">
+                    <%dansachqh = dansachnt.filter(function(item){return item.maquanhuyen==="h773"})%>
+
+                    <%dansachqh.forEach(function(item){%>
+                    <div class="col-6 col-sm-4 col-md-3 border border-muted">
+                        <p>Nhà Thuốc: <a href="/nhathuoc/<%=item.idnt%>/<%=item.url%>"><%=item.tennhathuoc%></a></p>
+                        <p>Số điện thoại: <%=item.phone%></p>
+<%var chgia = item.giaban.slice(0,-3).concat(".",item.giaban.slice(-3))%>
+                        <p>Giá bán: <strong><%=chgia%></strong>  VNĐ</p>
+                        <p><%=item.address%>-<%=item.xaphuong%>-<%=item.quanhuyen%>-<%=item.tinhthanh%></p>
+                    </div>
+                        <%});%>
+                </div>
+<hr>
+                <h4>Tại Quận 5</h4>
+                <div class="row">
+                    <%dansachqh = dansachnt.filter(function(item){return item.maquanhuyen==="h774"})%>
+
+                    <%dansachqh.forEach(function(item){%>
+                    <div class="col-6 col-sm-4 col-md-3 border border-muted">
+                        <p>Nhà Thuốc: <a href="/nhathuoc/<%=item.idnt%>/<%=item.url%>"><%=item.tennhathuoc%></a></p>
+                        <p>Số điện thoại: <%=item.phone%></p>
+<%var chgia = item.giaban.slice(0,-3).concat(".",item.giaban.slice(-3))%>
+                        <p>Giá bán: <strong><%=chgia%></strong>  VNĐ</p>
+                        <p><%=item.address%>-<%=item.xaphuong%>-<%=item.quanhuyen%>-<%=item.tinhthanh%></p>
+                    </div>
+                        <%});%>
+                </div>
+<hr>
+                <h4>Tại Quận 6</h4>
+                <div class="row">
+                    <%dansachqh = dansachnt.filter(function(item){return item.maquanhuyen==="h775"})%>
+
+                    <%dansachqh.forEach(function(item){%>
+                    <div class="col-6 col-sm-4 col-md-3 border border-muted">
+                        <p>Nhà Thuốc: <a href="/nhathuoc/<%=item.idnt%>/<%=item.url%>"><%=item.tennhathuoc%></a></p>
+                        <p>Số điện thoại: <%=item.phone%></p>
+<%var chgia = item.giaban.slice(0,-3).concat(".",item.giaban.slice(-3))%>
+                        <p>Giá bán: <strong><%=chgia%></strong>  VNĐ</p>
+                        <p><%=item.address%>-<%=item.xaphuong%>-<%=item.quanhuyen%>-<%=item.tinhthanh%></p>
+                    </div>
+                        <%});%>
+                </div>
+<hr>
+                <h4>Tại Quận 7</h4>
+                <div class="row">
+                    <%dansachqh = dansachnt.filter(function(item){return item.maquanhuyen==="h778"})%>
+
+                    <%dansachqh.forEach(function(item){%>
+                    <div class="col-6 col-sm-4 col-md-3 border border-muted">
+                        <p>Nhà Thuốc: <a href="/nhathuoc/<%=item.idnt%>/<%=item.url%>"><%=item.tennhathuoc%></a></p>
+                        <p>Số điện thoại: <%=item.phone%></p>
+<%var chgia = item.giaban.slice(0,-3).concat(".",item.giaban.slice(-3))%>
+                        <p>Giá bán: <strong><%=chgia%></strong>  VNĐ</p>
+                        <p><%=item.address%>-<%=item.xaphuong%>-<%=item.quanhuyen%>-<%=item.tinhthanh%></p>
+                    </div>
+                        <%});%>
+                </div>
+<hr>
+                <h4>Tại Quận 8</h4>
+                <div class="row">
+                    <%dansachqh = dansachnt.filter(function(item){return item.maquanhuyen==="h776"})%>
+
+                    <%dansachqh.forEach(function(item){%>
+                    <div class="col-6 col-sm-4 col-md-3 border border-muted">
+                        <p>Nhà Thuốc: <a href="/nhathuoc/<%=item.idnt%>/<%=item.url%>"><%=item.tennhathuoc%></a></p>
+                        <p>Số điện thoại: <%=item.phone%></p>
+<%var chgia = item.giaban.slice(0,-3).concat(".",item.giaban.slice(-3))%>
+                        <p>Giá bán: <strong><%=chgia%></strong>  VNĐ</p>
+                        <p><%=item.address%>-<%=item.xaphuong%>-<%=item.quanhuyen%>-<%=item.tinhthanh%></p>
+                    </div>
+                        <%});%>
+                </div>
+<hr>
+                <h4>Tại Quận 9</h4>
+                <div class="row">
+                    <%dansachqh = dansachnt.filter(function(item){return item.maquanhuyen==="h763"})%>
+
+                    <%dansachqh.forEach(function(item){%>
+                    <div class="col-6 col-sm-4 col-md-3 border border-muted">
+                        <p>Nhà Thuốc: <a href="/nhathuoc/<%=item.idnt%>/<%=item.url%>"><%=item.tennhathuoc%></a></p>
+                        <p>Số điện thoại: <%=item.phone%></p>
+<%var chgia = item.giaban.slice(0,-3).concat(".",item.giaban.slice(-3))%>
+                        <p>Giá bán: <strong><%=chgia%></strong>  VNĐ</p>
+                        <p><%=item.address%>-<%=item.xaphuong%>-<%=item.quanhuyen%>-<%=item.tinhthanh%></p>
+                    </div>
+                        <%});%>
+                </div>
+<hr>
+                <h4>Tại Quận 10</h4>
+                <div class="row">
+                    <%dansachqh = dansachnt.filter(function(item){return item.maquanhuyen==="h771"})%>
+
+                    <%dansachqh.forEach(function(item){%>
+                    <div class="col-6 col-sm-4 col-md-3 border border-muted">
+                        <p>Nhà Thuốc: <a href="/nhathuoc/<%=item.idnt%>/<%=item.url%>"><%=item.tennhathuoc%></a></p>
+                        <p>Số điện thoại: <%=item.phone%></p>
+<%var chgia = item.giaban.slice(0,-3).concat(".",item.giaban.slice(-3))%>
+                        <p>Giá bán: <strong><%=chgia%></strong>  VNĐ</p>
+                        <p><%=item.address%>-<%=item.xaphuong%>-<%=item.quanhuyen%>-<%=item.tinhthanh%></p>
+                    </div>
+                        <%});%>
+                </div>
+<hr>
+                <h4>Tại Quận 11</h4>
+                <div class="row">
+                    <%dansachqh = dansachnt.filter(function(item){return item.maquanhuyen==="h772"})%>
+
+                    <%dansachqh.forEach(function(item){%>
+                    <div class="col-6 col-sm-4 col-md-3 border border-muted">
+                        <p>Nhà Thuốc: <a href="/nhathuoc/<%=item.idnt%>/<%=item.url%>"><%=item.tennhathuoc%></a></p>
+                        <p>Số điện thoại: <%=item.phone%></p>
+<%var chgia = item.giaban.slice(0,-3).concat(".",item.giaban.slice(-3))%>
+                        <p>Giá bán: <strong><%=chgia%></strong>  VNĐ</p>
+                        <p><%=item.address%>-<%=item.xaphuong%>-<%=item.quanhuyen%>-<%=item.tinhthanh%></p>
+                    </div>
+                        <%});%>
+                </div>
+<hr>
+                <h4>Tại Quận 12</h4>
+                <div class="row">
+                    <%dansachqh = dansachnt.filter(function(item){return item.maquanhuyen==="h761"})%>
+
+                    <%dansachqh.forEach(function(item){%>
+                    <div class="col-6 col-sm-4 col-md-3 border border-muted">
+                        <p>Nhà Thuốc: <a href="/nhathuoc/<%=item.idnt%>/<%=item.url%>"><%=item.tennhathuoc%></a></p>
+                        <p>Số điện thoại: <%=item.phone%></p>
+<%var chgia = item.giaban.slice(0,-3).concat(".",item.giaban.slice(-3))%>
+                        <p>Giá bán: <strong><%=chgia%></strong>  VNĐ</p>
+                        <p><%=item.address%>-<%=item.xaphuong%>-<%=item.quanhuyen%>-<%=item.tinhthanh%></p>
+                    </div>
+                        <%});%>
+                </div>
+<hr>
+                
+                <h4>Tại Huyện Nhà Bè</h4>
+                <div class="row">
+                    <%dansachqh = dansachnt.filter(function(item){return item.maquanhuyen==="h786"})%>
+
+                    <%dansachqh.forEach(function(item){%>
+                    <div class="col-6 col-sm-4 col-md-3 border border-muted">
+                        <p>Nhà Thuốc: <a href="/nhathuoc/<%=item.idnt%>/<%=item.url%>"><%=item.tennhathuoc%></a></p>
+                        <p>Số điện thoại: <%=item.phone%></p>
+<%var chgia = item.giaban.slice(0,-3).concat(".",item.giaban.slice(-3))%>
+                        <p>Giá bán: <strong><%=chgia%></strong>  VNĐ</p>
+                        <p><%=item.address%>-<%=item.xaphuong%>-<%=item.quanhuyen%>-<%=item.tinhthanh%></p>
+                    </div>
+                        <%});%>
+                </div>
+<hr>
+                <h4>Tại Huyện Hooc Môn</h4>
+                <div class="row">
+                    <%dansachqh = dansachnt.filter(function(item){return item.maquanhuyen==="h784"})%>
+
+                    <%dansachqh.forEach(function(item){%>
+                    <div class="col-6 col-sm-4 col-md-3 border border-muted">
+                        <p>Nhà Thuốc: <a href="/nhathuoc/<%=item.idnt%>/<%=item.url%>"><%=item.tennhathuoc%></a></p>
+                        <p>Số điện thoại: <%=item.phone%></p>
+<%var chgia = item.giaban.slice(0,-3).concat(".",item.giaban.slice(-3))%>
+                        <p>Giá bán: <strong><%=chgia%></strong>  VNĐ</p>
+                        <p><%=item.address%>-<%=item.xaphuong%>-<%=item.quanhuyen%>-<%=item.tinhthanh%></p>
+                    </div>
+                        <%});%>
+                </div>
+<hr>
+                <h4>Tại Huyện Củ Chi</h4>
+                <div class="row">
+                    <%dansachqh = dansachnt.filter(function(item){return item.maquanhuyen==="h783"})%>
+
+                    <%dansachqh.forEach(function(item){%>
+                    <div class="col-6 col-sm-4 col-md-3 border border-muted">
+                        <p>Nhà Thuốc: <a href="/nhathuoc/<%=item.idnt%>/<%=item.url%>"><%=item.tennhathuoc%></a></p>
+                        <p>Số điện thoại: <%=item.phone%></p>
+<%var chgia = item.giaban.slice(0,-3).concat(".",item.giaban.slice(-3))%>
+                        <p>Giá bán: <strong><%=chgia%></strong>  VNĐ</p>
+                        <p><%=item.address%>-<%=item.xaphuong%>-<%=item.quanhuyen%>-<%=item.tinhthanh%></p>
+                    </div>
+                        <%});%>
+                </div>
+<hr>
+                <h4>Tại Huyện Bình Chánh</h4>
+                <div class="row">
+                    <%dansachqh = dansachnt.filter(function(item){return item.maquanhuyen==="h785"})%>
+
+                    <%dansachqh.forEach(function(item){%>
+                    <div class="col-6 col-sm-4 col-md-3 border border-muted">
+                        <p>Nhà Thuốc: <a href="/nhathuoc/<%=item.idnt%>/<%=item.url%>"><%=item.tennhathuoc%></a></p>
+                        <p>Số điện thoại: <%=item.phone%></p>
+<%var chgia = item.giaban.slice(0,-3).concat(".",item.giaban.slice(-3))%>
+                        <p>Giá bán: <strong><%=chgia%></strong>  VNĐ</p>
+                        <p><%=item.address%>-<%=item.xaphuong%>-<%=item.quanhuyen%>-<%=item.tinhthanh%></p>
+                    </div>
+                        <%});%>
+                </div>
+<hr>
+                <h4>Tại Huyện Cần Giờ </h4>
+                <div class="row">
+                    <%dansachqh = dansachnt.filter(function(item){return item.maquanhuyen==="h787"})%>
+
+                    <%dansachqh.forEach(function(item){%>
+                    <div class="col-6 col-sm-4 col-md-3 border border-muted">
+                        <p>Nhà Thuốc: <a href="/nhathuoc/<%=item.idnt%>/<%=item.url%>"><%=item.tennhathuoc%></a></p>
+                        <p>Số điện thoại: <%=item.phone%></p>
+<%var chgia = item.giaban.slice(0,-3).concat(".",item.giaban.slice(-3))%>
+                        <p>Giá bán: <strong><%=chgia%></strong>  VNĐ</p>
+                        <p><%=item.address%>-<%=item.xaphuong%>-<%=item.quanhuyen%>-<%=item.tinhthanh%></p>
+                    </div>
+                        <%});%>
+                </div>
+
+<hr>
+                <h3>Tại các khu vực khác </h4>
+                <div class="row">
+                    <%dansachqh = dansachnt.filter(function(item){return item.matinhthanh!=="t79"})%>
+
+                    <%dansachqh.forEach(function(item){%>
+                    <div class="col-6 col-sm-4 col-md-3 border border-muted">
+                        <p>Nhà Thuốc: <a href="/nhathuoc/<%=item.idnt%>/<%=item.url%>"><%=item.tennhathuoc%></a></p>
+                        <p>Số điện thoại: <%=item.phone%></p>
+<%var chgia = item.giaban.slice(0,-3).concat(".",item.giaban.slice(-3))%>
+                        <p>Giá bán: <strong><%=chgia%></strong>  VNĐ</p>
+                        <p><%=item.address%>-<%=item.xaphuong%>-<%=item.quanhuyen%>-<%=item.tinhthanh%></p>
+                    </div>
+                        <%});%>
+                </div>
+
+
+                <h3 class="d-none"><%=sanpham.tensanpham%> mua ở đâu giá rẻ nhất, chất lượng chính hãng thành phần, công dụng, giá bao nhiêu</h3>
+                
+        </div>
+            <div class="row fixed-bottom">
+                <div class="col-9 col-md-10"></div>
+                <div class="col-3 col-md-1">
+                   <a href="#vetop"><img src="https://image.flaticon.com/icons/svg/753/753359.svg"></a> 
+                </div>
+            
+            </div>
+    <br/>
+    <hr/>
+     
+        <hr/>
+        
+    
+      <p style="clear: both"></p>
+      
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <hr/>
+        <hr/>
+    <% include footer%>
+</body>
+</html>

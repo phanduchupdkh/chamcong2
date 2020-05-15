@@ -1,0 +1,30 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.4",
+    "dotenv": "^7.0.0",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "mailgun-js": "^0.22.0",
+    "md5": "^2.2.1",
+    "mongoose": "^5.4.19",
+    "multer": "^1.4.1",
+    "nodemailer": "^6.2.1",
+    "shortid": "^2.2.14"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
+}

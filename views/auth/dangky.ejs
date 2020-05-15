@@ -1,0 +1,138 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Nhà Thuốc Chuẩn: Luôn Miễn Phí</title>
+        <meta name="description" content="Nhà Thuốc Chuẩn - Nhà Thuốc Uy tín">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link rel="icon" href="https://file.hstatic.net/1000287322/file/favicon_1_b09391da48434a18adff152c53967093.png" type="image/x-icon"/>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    </head>
+    <body> 
+        <div style="width:80%; margin-left:10%">
+            <h2>Đăng Ký Tài Khoản</h2> <p>Đã có tài khoản: <a href="/auth/login"> Đăng nhập</a></p>
+
+            <form method="POST" action="/dangky">
+                <%if (errors!==""){%>
+                <div class="alert alert-danger"><%=errors%></div>
+                <%};%>
+                <div class="form-group">
+                    <label>Họ Và Tên:</label>
+                  <input class="form-control" id="name" name="name" placeholder="Họ Và Tên" type="text" value="<%=values===''?values:values.name%>" required/>
+                </div>
+                <div class="form-group">
+                    <label>Số Điện Thoại:</label>
+                  <input class="form-control" id="phone" name="phone" placeholder="VD: 0937994901" type="number" value="<%=values===''?values:values.phone%>" required/>
+                </div>
+                <div class="form-group">
+                    <label>Email đăng nhập:</label>
+                  <input class="form-control" id="email" name="email" placeholder="Email Đăng Nhập" type="email" value="<%=values===''?values:values.email%>" required/>
+                </div>
+                
+                <div class="form-group">
+                    <label>Mật Khẩu: </label>
+                  <input class="form-control" id="password" name="password" placeholder="ít nhất 6 ký tự" type="password" required/>
+                </div>
+                
+                <div class="form-group">
+                    <label>Nhắc Lại Mật Khẩu:</label>
+                  <input class="form-control" id="nhaclaipass" name="nhaclaipass" placeholder="Nhắc Lại Mật khẩu" type="password" required/>
+                </div>
+                <div class="form-group">
+                    <label>Tên Nhà Thuốc:</label>
+                  <input class="form-control" id="tennhathuoc" name="tennhathuoc" placeholder="VD: Minh Châu" type="text" value="<%=values===''?values:values.tennhathuoc%>" required/>
+                </div>
+                
+                <div class="form-group">
+                    <label>Địa Chỉ:</label>
+                  <input class="form-control" id="adress" name="address" placeholder="Địa Chỉ: Số Nhà - Tên Đường/Thôn Xóm" type="text" value="<%=values===''?values:values.address%>" required/>
+                </div>
+                <label class="field-label" for="customer_shipping_province"> T&#x1EC9;nh / th&agrave;nh  </label>
+                <select class="field-input"
+                    id="selecttinh" name="customer_shipping_province" onchange="chaychonhuyen(this.id,'selecthuyen')">
+                </select>
+                
+                <div class="field-input-wrapper field-input-wrapper-select">
+                    <label class="field-label" for="customer_shipping_district">Qu&#x1EAD;n / huy&#x1EC7;n</label>
+                    <select class="field-input" id="selecthuyen" name="customer_shipping_district" onchange="chaychonxa(this.id,'selectxa')">  
+                    </select>
+                </div>
+
+                <div class="field-input-wrapper field-input-wrapper-select">
+                    <label class="field-label" for="customer_shipping_ward">Ph&#x1B0;&#x1EDD;ng / x&atilde;</label>
+                    <select class="field-input" id="selectxa" name="customer_shipping_ward"></select>
+                </div>
+            <button>Đăng Ký</button>
+            </form>
+
+        </div>
+        <div class="pt-5 pb-5"></div>
+        <script type="text/javascript" src="/javascripts/diachivnjs.js"></script>
+        <script type="text/javascript">
+            function layDanhSachTinh(){
+                var danhSachTinh = [];
+                trunggian="";
+                diachi.forEach(function (item){
+                    if ( item.tinhthanh !== trunggian){
+                        danhSachTinh.push(item); trunggian=item.tinhthanh}
+                    });
+                return danhSachTinh;    
+                }        
+            function layDanhSachHuyen(tinh){
+                let locDS=diachi.filter(function(item2){return tinh == item2.matinhthanh});
+                let danhSachHuyen = [];
+                trunggian="";
+                locDS.forEach(function (item){
+                if ( item.quanhuyen !== trunggian){
+                    danhSachHuyen.push(item); trunggian=item.quanhuyen}
+                    });
+                return danhSachHuyen;
+                }
+            function layDanhSachXa(huyen){
+                let locDS=diachi.filter(function(item2){return huyen == item2.maquanhuyen})
+                let danhSachXa = [];
+                trunggian="";
+                locDS.forEach(function (item){
+                if ( item.xaphuong !== trunggian){
+                    danhSachXa.push(item); trunggian=item.xaphuong}
+                });
+                return danhSachXa;
+                }
+            s1 = document.getElementById("selecttinh");
+            for (var option of layDanhSachTinh()) {
+                newoption = document.createElement("option");
+                newoption.value = option.matinhthanh;
+                newoption.innerHTML = option.tinhthanh;
+                s1.options.add(newoption);
+                }
+            function chaychonhuyen(s1, s2) {
+                var s1 = document.getElementById(s1);
+                s2 = document.getElementById(s2);
+                s2.innerHTML = "";
+                dsHuyen = layDanhSachHuyen(s1.value);
+                for (var option of dsHuyen) {
+                    newoption = document.createElement("option");
+                    newoption.value = option.maquanhuyen;
+                    newoption.innerHTML = option.quanhuyen;
+                    s2.options.add(newoption);
+                    document.getElementById("selectxa").innerHTML = "";
+                    }
+                };
+
+            function chaychonxa(s3, s4) {
+                var s3 = document.getElementById(s3);
+                s4 = document.getElementById(s4);
+                s4.innerHTML = "";
+                dsXa = layDanhSachXa(s3.value);
+                for (var option of dsXa) {
+                    newoption = document.createElement("option");
+                    newoption.value = option.maxaphuong;
+                    newoption.innerHTML = option.xaphuong;
+                    s4.options.add(newoption);
+                    }
+                }
+            chaychonhuyen('selecttinh','selecthuyen');
+            chaychonxa('selecthuyen','selectxa');
+                    
+        </script>
+    </body> 
+</html>

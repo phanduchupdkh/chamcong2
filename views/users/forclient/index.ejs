@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>
+        <%= userBS.name%>
+        <button onclick="handleDiemDanh()">Điểm danh</button>
+    </p>
+    <a href="./dangxuat">Đăng xuất</a>
+    <hr />
+    <%[{ngay: "24/05/2020", ngaycong: 4},{ngay: "23/05/2020", ngaycong: 9}].forEach(item=>{%>
+    <p>
+        <%=item.ngay%> : <%=item.ngaycong%>
+    </p>
+    <%})%>
+    <script>
+        function handleDiemDanh() {
+            fetch('https://chamcong.herokuapp.com/', { mode: 'no-cors', method: 'POST', body: 'a=1' })
+                .then(res => res.json())
+                .then(json => console.log(json.ip))
+        } 
+    </script>
+</body>
+
+</html>

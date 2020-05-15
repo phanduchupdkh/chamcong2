@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Nhà Thuốc Chuẩn: Luôn Miễn Phí</title>
+        <meta name="description" content="Nhà Thuốc Chuẩn - Nhà Thuốc Uy tín">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link rel="icon" href="https://file.hstatic.net/1000287322/file/favicon_1_b09391da48434a18adff152c53967093.png" type="image/x-icon"/>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    </head>
+    <body> 
+        <div style="width:80%; margin-left:10%">
+            <h2>Đăng Ký Nhà Phân Phối</h2> <p>Đã có tài khoản: <a href="/auth/logincompany"> Đăng nhập</a></p>
+
+            <form method="POST" action="/dangkycongty">
+                <%if (errors!==""){%>
+                <div class="alert alert-danger"><%=errors%></div>
+                <%};%>
+
+                <div class="form-group">
+                    <label>Email Đăng Nhập:</label>
+                  <input class="form-control" id="email" name="email" placeholder="Email Đăng Nhập" type="email" value="<%=values===''?values:values.email%>" required/>
+                </div>
+                
+                <div class="form-group">
+                    <label>Mật Khẩu: </label>
+                  <input class="form-control" id="password" name="password" placeholder="ít nhất 6 ký tự" type="password" required/>
+                </div>
+                
+                <div class="form-group">
+                    <label>Nhắc Lại Mật Khẩu:</label>
+                  <input class="form-control" id="nhaclaipass" name="nhaclaipass" placeholder="Nhắc Lại Mật khẩu" type="password" required/>
+                </div>
+
+                <div class="form-group">
+                    <label>Tên Công Ty:</label>
+                  <input class="form-control" id="tencongty" name="tencongty" placeholder="VD: Công ty TNHH ABCXYZ" type="text" value="<%=values===''?values:values.tencongty%>" required/>
+                </div>
+                <div class="form-group">
+                    <label>Hotline:</label>
+                  <input class="form-control" id="phone" name="phone" type="number" value="<%=values===''?values:values.phone%>" required/>
+                </div>
+                
+                <div class="form-group">
+                    <label>Địa chỉ công ty:</label>
+                  <input class="form-control" id="adresscty" name="addresscty" placeholder="VD: 306 Lê Lai, Quận Cầu Giấy, TP Hà Nội" type="text" value="<%=values===''?values:values.addresscty%>" required/>
+                </div>
+                
+                <div class="form-group">
+                    <label>Địa chỉ đại lý:</label>
+                  <input class="form-control" id="adress" name="address" placeholder="VD: 306 Lê Lai, Quận Cầu Giấy, TP Hà Nội" type="text" value="<%=values===''?values:values.address%>" required/>
+                </div>
+               
+            <button>Đăng Ký</button>
+            </form>
+
+        </div>
+                
+    </body> 
+</html>

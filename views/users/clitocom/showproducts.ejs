@@ -1,0 +1,81 @@
+<html>
+	 <head>
+	 	<% include ../forclient/googleana%>
+	 	<link rel="icon" href="https://file.hstatic.net/1000287322/file/favicon_1_b09391da48434a18adff152c53967093.png" type="image/x-icon"/>
+	 	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+<title>Công ty: <%=congty.tencongty%></title>
+<meta name="description" content="Công ty: <%=congty.tencongty%>">
+<meta name="keywords" content="Công ty: <%=congty.tencongty%>">
+ 
+<!-- Google / Search Engine Tags -->
+<meta itemprop="name" content="Công ty: <%=congty.tencongty%>">
+<meta itemprop="description" content="Công ty: <%=congty.tencongty%>">
+ 
+<!-- Facebook Meta Tags -->
+<meta property="og:type" content="nhathuocchuan">
+<meta property="og:title" content="Công ty: <%=congty.tencongty%>">
+<meta property="og:description" content="Công ty: <%=congty.tencongty%>">
+<meta property="og:keywords" content="Công ty: <%=congty.tencongty%>">
+ 
+<!-- Twitter Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Công ty: <%=congty.tencongty%>">
+<meta name="twitter:site" content="nhathuocchuan">
+<meta name="twitter:description" content="Công ty: <%=congty.tencongty%>">
+<!-- SEO meta tags -->
+	</head>
+	<body>
+		<% include ../forclient/header%>
+		
+		 
+			
+		<div class="container pt-5">
+				
+		<h1>Công ty: <%=congty.tencongty%></h1>
+		<p><strong>Địa chỉ: </strong><%=congty.addresscty%></p>
+		<p><strong>Hotline: </strong><%=congty.phone%></p>
+
+			<hr>
+				<h3>Danh Mục Sản Phẩm:</h3>
+				<div class="row">
+
+				<%congty.danhsachsp.forEach(function(item){%>
+             		<%let kt = productserver.find(function(item2){
+                		return item2.socongbo === item.socongbo;
+                		});
+            		let linkhinh="https://file.hstatic.net/1000287322/file/updating_4b3e39ad13974b06bd99d80bb44a2218.png";
+            		if (kt) {linkhinh=kt.linkhinh}        
+            		if (item.linkhinh !== "https://file.hstatic.net/1000287322/file/updating_4b3e39ad13974b06bd99d80bb44a2218.png") {linkhinh = item.linkhinh};
+            		%>
+					<div class="col-4 col-sm-3 col-md-2 border border-muted">
+		        		<a href="/congty/<%=congty.idcomp%>/<%=item.url%>"><img src="<%=linkhinh%>" alt="<%=item.tensanpham%>" style='width: 100%'>
+		       			<p> <%=item.tensanpham%> </p></a>
+		       			<p>Giá Bán: <%=item.giaban.slice(0,-3).concat(".",item.giaban.slice(-3))%>đ </p>
+		       			<form action="/cart/addcty" method="POST">
+                    		<input class="d-none" type="number" value="1" name="tentacles">
+		                    <input class="d-none" value="<%=congty.idcomp%>" name="idcomp">
+		                    <input class="d-none" value="<%=item.url%>" name="urlsp">
+		                    <button style="font-size: 12px" class="btn btn-warning list-inline" >
+                        		<img style="width:10%" src="https://image.flaticon.com/icons/svg/134/134561.svg" atl="chọn mua">
+                         		Chọn Mua
+                   			</button> 
+                		</form>
+					</div>
+				<%});%>
+				</div>
+		</div>
+    	
+    	  
+    	   <br/>
+        <br/>
+
+        <br/>
+        <hr/>
+        <hr/>
+    <% include ../forclient/footer%>
+    <div class="pt-5 pb-5"></div>
+	</body>
+
+</html>

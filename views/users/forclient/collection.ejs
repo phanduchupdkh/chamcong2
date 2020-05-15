@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head lang="vi">
+	<% include googleana%>
+    <meta charset="utf-8">
+    <link rel="icon" href="https://file.hstatic.net/1000287322/file/favicon_1_b09391da48434a18adff152c53967093.png" type="image/x-icon"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!-- HTML Meta Tags -->
+<title>thuốc chuẩn mua ở đâu</title>
+<meta name="description" content="thuốc chuẩn mua ở đâu tại  Thành Phố Hồ Chí Minh"/>
+<meta name="keywords" content="thuốc chuẩn mua ở đâu tại  Thành Phố Hồ Chí Minh"/>
+ 
+<!-- Google / Search Engine Tags -->
+<meta itemprop="name" content="thuốc chuẩn mua ở đâu tại  Thành Phố Hồ Chí Minh"/>
+<meta itemprop="description" content="thuốc chuẩn mua ở đâu tại  Thành Phố Hồ Chí Minh"/>
+
+ 
+<!-- Facebook Meta Tags -->
+
+<meta property="og:type" content="nhathuocchuan"/>
+<meta property="og:title" content="thuốc chuẩn mua ở đâu tại  Thành Phố Hồ Chí Minh"/>
+<meta property="og:description" content="thuốc chuẩn mua ở đâu tại  Thành Phố Hồ Chí Minh"/>
+
+<meta property="og:keywords" content="chuẩn, , Thành Phố Hồ Chí Minh"/>
+ 
+<!-- Twitter Meta Tags -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="thuốc chuẩn mua ở đâu tại  Thành Phố Hồ Chí Minh"/>
+<meta name="twitter:site" content="nhathuocchuan"/>
+<meta name="twitter:description" content="thuốc chuẩn mua ở đâu tại  Thành Phố Hồ Chí Minh"/>
+
+<!-- SEO meta tags -->
+
+</head>
+
+<body>
+   
+		<% include header%>
+		<a href="/">Nhà Thuốc Chuẩn </a> <%="-->"%> 
+		<a href="/collection/<%=collection%>"><%=collection%></a>
+        <br><br>
+        <br><br>
+		<div class="container">
+
+			
+			<hr>
+			<h2></h2>
+			<hr>
+			<div class="row">
+
+				<%danhsach.forEach(function(item){%>
+			
+				<div class="col-6 col-sm-4 col-lg-2  border border-muted">
+		        	<a href="/productsv/<%=item.url%>"><img src="<%=item.linkhinh%>" alt="<%=item.tensanpham%>" style='width: 90%'></a>
+		       		<p> <%=item.tensanpham%> </p>
+		       		<p>Giá Bán: <%=item.giaban%>đ </p>
+				</div>
+				<%});%>
+			</div>
+		</div>
+
+		
+	
+
+      <p style="clear: both"></p>
+      
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <hr/>
+        <hr/>
+    <% include footer%>
+    
+</body>
+</html>

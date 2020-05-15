@@ -1,0 +1,33 @@
+<div class="container-fluid bg-danger fixed-bottom">	
+				<div class="row pt-3 pb-3">
+					<div class="col-2 align-middle">
+		        		<a href="/nhathuoc/<%=nhathuoc.idnt%>"><img src='https://file.hstatic.net/1000287322/file/the_trang_66f662603c8549e6b2b9be05874acdfc.png' alt="logo" style='height:25px'></a>
+					</div>
+					<div class="col-2 align-middle ">
+		        		<a class="text-light" href="/collectionnt/danhmuctpcn/<%=nhathuoc.idnt%>" >TPCN</a>
+					</div>
+					<div class="col-4 align-middle">
+		        		<a class="text-light" href="/collectionnt/danhmucmypham/<%=nhathuoc.idnt%>">Mỹ Phẩm</a>
+					</div>
+					<div class="col-4 align-middle">
+		        		<a class="text-light" href="#">TB Y Tế</a>
+					</div>
+				</div>
+</div>
+
+<div class="container-fluid bg-danger fixed-top">
+<a class="text-light" href="/">Trang Chủ</a>
+  <form action="/search/<%=nhathuoc.idnt%>" method="GET">
+  <div class="row  mt-2 mb-2 ">
+  	<div class="col-8 col-sm-4 col-ml-3">
+    	<input class="mr-sm-2 form-control" name="q" type="text" placeholder="Tìm trong NT <%=nhathuoc.tennhathuoc%>">
+    </div>
+    <div class="col-2">
+    	<button class="btn btn-warning" type="submit">Search</button>
+    </div>
+    
+    
+   </div>
+  </form>
+</div>
+

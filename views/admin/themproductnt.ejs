@@ -1,0 +1,42 @@
+<html>
+	 <head>
+	 	<link rel="icon" href="https://file.hstatic.net/1000287322/file/favicon_1_b09391da48434a18adff152c53967093.png" type="image/x-icon" />
+	 	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+	</head>
+	<body>
+		<div style='height:80px; background-color:#183544'>
+	    	<a href="/kenhnhathuoc" style='float:left; margin-right:10%'><img src='https://theme.hstatic.net/1000287322/1000371118/14/logo.png' alt="logo nhà thuốc chuẩn" style='height:70px' >Kênh Nhà Thuốc </a>
+		</div> 
+			<br/>
+			<br/>
+		<div class="container">	
+			<hr>
+		<h3>Các nhà thuốc hợp tác với nhaThuocChuan.com <%=users.length%></h3>
+		<%users.sort(function(a, b){return parseInt(a.danhsachsp.length) - parseInt(b.danhsachsp.length)})%>
+				<br/>
+				<div class="row">
+					<%users.forEach(function(item){%>
+					<div class="col-6 col-sm-4 col-md-3" style="border:solid;">
+		        		<p>Nhà Thuốc: <a href="/adminn/themproductnt/<%=item.id%>"><%=item.tennhathuoc%></a></p>
+		        		<p>số sản phẩm: <%=item.danhsachsp.length%></p>
+		        		<p><%=item.phone%></p>
+		        		<p><%=item.email%></p>
+		        		<a onclick="return confirm('Bạn có chắc chắn xóa không?')" href="/adminn/xoant/<%=item.id%>">Xóa</a>
+					</div>
+						<%});%>
+				</div>
+		</div>
+    	
+    	<p style="clear: both"></p>
+    	<br/>
+    	<br/>
+    	<br/>
+    	<hr/>
+    	<hr/>
+    	
+
+	</body>
+
+</html>

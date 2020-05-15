@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head lang="vi">
+    <% include googleana%>
+    <meta charset="utf-8">
+    <link rel="icon" href="https://file.hstatic.net/1000287322/file/favicon_1_b09391da48434a18adff152c53967093.png" type="image/x-icon"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- HTML Meta Tags -->
+<title>Thuốc <%=sanpham.tensanpham%> thành phần công dụng tác dụng giá bao nhiêu mua ở đâu</title>
+<meta name="description" content="thuốc <%=sanpham.tensanpham%> thành phần công dụng tác dụng giá bao nhiêu mua ở đâu">
+<meta name="keywords" content="thuốc <%=sanpham.tensanpham%> thành phần công dụng tác dụng giá bao nhiêu mua ở đâu">
+ 
+<!-- Google / Search Engine Tags -->
+<meta itemprop="name" content="thuốc <%=sanpham.tensanpham%> thành phần công dụng tác dụng giá bao nhiêu mua ở đâu">
+<meta itemprop="description" content="thuốc <%=sanpham.tensanpham%> thành phần công dụng tác dụng giá bao nhiêu mua ở đâu">
+<meta itemprop="image" content="<%=linkhinh%>">
+ 
+<!-- Facebook Meta Tags -->
+<meta property="og:url" content="https://banhang.nhathuocchuan.com/<%=sanpham.tensanpham%>">
+<meta property="og:type" content="nhathuocchuan">
+<meta property="og:title" content="thuốc <%=sanpham.tensanpham%> thành phần công dụng tác dụng giá bao nhiêu mua ở đâu">
+<meta property="og:description" content="thuốc <%=sanpham.tensanpham%> thành phần công dụng tác dụng giá bao nhiêu mua ở đâu">
+<meta property="og:image" content="<%=linkhinh%>">
+<meta property="og:keywords" content="<%=sanpham.tensanpham%>, thành phần, công dụng, giá bao nhiêu, mua ở đâu">
+ 
+<!-- Twitter Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="thuốc <%=sanpham.tensanpham%> thành phần công dụng tác dụng giá bao nhiêu mua ở đâu">
+<meta name="twitter:site" content="nhathuocchuan">
+<meta name="twitter:description" content="thuốc <%=sanpham.tensanpham%> thành phần công dụng tác dụng giá bao nhiêu mua ở đâu">
+<meta name="twitter:image" content="<%=linkhinh%>">
+<!-- SEO meta tags -->
+
+</head>
+
+<body>
+   <% include header%>
+     <br/>
+     <p><i class="glyphicon glyphicon-shopping-cart"></i></p>
+<div class="container">
+
+    <br/>  <br/>  <br/>
+    <div class="row">
+            <div class="col-sm-4">
+                <img src="<%=linkhinh%>" alt= "thuốc <%=sanpham.tensanpham%>" style='width: 80%'>
+            </div>
+            <div class='col-sm-8'>
+                <strong><%=sanpham.tensanpham%></strong>
+                <p>Giá: <%=sanpham.giaban.slice(0,-3).concat(".",sanpham.giaban.slice(-3))%> VND</p>
+                <p>Liên hệ: <%=congty.phone%></p>
+                
+                <form action="/cart/addcty" method="POST">
+                    <input type="number" value="1" id="tentacles" name="tentacles" min="1" max="100">
+                    <input class="d-none" value="<%=congty.idcomp%>" name="idcomp">
+                    <input class="d-none" value="<%=sanpham.url%>" name="urlsp">
+
+                    <button class="btn btn-warning">
+                        <img style="width:25px" src="https://image.flaticon.com/icons/svg/134/134561.svg" atl="chọn mua">
+                         Chọn Mua
+                    </button> 
+                </form>
+                <p>Số công bố: <%=sanpham.socongbo%> </p>
+                <p class="pt-4">Địa chỉ mua sản phẩm: <%=congty.address%></p>
+            </div>
+    </div>	
+    <br/>
+    <hr/>
+<h1 class='d-none'><%=sanpham.tensanpham%> thành phần công dụng tác dụng giá bao nhiêu mua ở đâu</h1>
+    <div class='row'>
+        <h2 class="pt-2 pb-2">Chi tiết về sản phẩm <strong><%=sanpham.tensanpham%></strong> :</h2>
+        
+
+       
+        <div class="col-sm-12">
+                
+                <h3>1. <%=sanpham.tensanpham%> có những thành phần gì?</h3>
+                <p><%-sanpham.thanhphan%></p>
+
+                <h3>2. Công dụng <%=sanpham.tensanpham%> là gì?</h3>
+                <p><%-sanpham.congdung%></p>
+
+                <h3>3. Đối tựợng sử dụng <%=sanpham.tensanpham%></h3>
+                <p><%-sanpham.doituongsudung%></p>
+
+                <h3>4. Huớng dẫn sử dụng <%=sanpham.tensanpham%></h3>
+                <p><%-sanpham.cachsudung%></p>
+
+                <h3>5. Bảo quản, quy cách đóng gói</h3>
+                <p>Để nơi khô ráo, thoáng mát tránh ánh nắng chiếu trực tiếp.</p>
+                <p>Quy cách đóng gói: <%=sanpham.quycach%></p>
+
+                <h3>6. Công ty chịu trách nhiệm phân phối <%=sanpham.tensanpham%></h3>
+                <p><%=congty.tencongty%></p>
+                <p>Địa Chỉ: <%=congty.addresscty%></p>
+
+                 
+        </div> 
+    </div> 
+</div> 
+        <hr/>
+        
+        <div class="container mt-5">
+            <%if (cotrensv =="true") {%>
+            <h4 class="mb-5">Điểm bán <strong><%=sanpham.tensanpham%></strong> <a href="/productsv/<%=urlsv%>">Click để xem</a></h4> 
+            <%}%>
+            <h2>Sản phẩm khác liên quan</h2> 
+            
+            <div class="row">
+                <%congty.danhsachsp.slice(0,3).forEach(function(item){%>
+                <div class="col-sm-4">
+                    <a href="/congty/<%=congty.idcomp%>/<%=item.url%>">
+                        <img style="width:50%" src="<%=item.linkhinh%>" alt="<%=item.tensanpham%>">
+                    
+                        <p><%=item.tensanpham%></p>
+                    </a>
+                    <p><%=item.giaban.slice(0,-3).concat(".",item.giaban.slice(-3))%> VND</p>
+                </div>
+                <%})%>
+                  
+            </div>
+    </div>  
+      
+      
+		
+   
+      <p style="clear: both"></p>
+      
+    <% include footer%>
+    <div class="pt-5 pb-5"></div>
+</body>
+</html>

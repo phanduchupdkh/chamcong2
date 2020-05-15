@@ -1,0 +1,52 @@
+<html>
+	 <head>
+	 	<% include googleana%>
+	 	<link rel="icon" href="https://file.hstatic.net/1000287322/file/favicon_1_b09391da48434a18adff152c53967093.png" type="image/x-icon"/>
+	 	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+	</head>
+	<body>
+		<% include headernt%>
+		 
+			<br/>
+			<br/>
+		<div class="container">
+			<hr>
+				<h3>Tìm thấy <%=sanpham.length%> Kết quả</h3>
+				<br/>
+				<div class="row">
+					
+					<%sanpham.forEach(function(item){%>
+					
+					<div  class="col-4 col-sm-3 col-md-2 border border-muted">
+		        		<a href="/nhathuoc/<%=nhathuoc.idnt%>/<%=item.url%>"><img src="<%=item.linkhinh%>" alt="<%=item.tensanpham%>" style='width: 100%'>
+		       			<p> <%=item.tensanpham%> </p></a>
+		       			<p style="vertical-align: bottom">Giá Bán: <%=item.giaban.slice(0,-3).concat(".",item.giaban.slice(-3))%>đ </p>
+		       			<form action="/cart/add" method="POST">
+                    		<input class="d-none" type="number" value="1" name="tentacles">
+		                    <input class="d-none" value="<%=nhathuoc.idnt%>" name="idnhathuoc">
+		                    <input class="d-none" value="<%=item.url%>" name="urlsp">
+
+		                    <button style="font-size: 12px" class="btn btn-warning list-inline" >
+                        		<img style="width:10%" src="https://image.flaticon.com/icons/svg/134/134561.svg">
+                         		Chọn Mua
+                   			</button> 
+                		</form>
+					</div>
+					<%});%>
+					
+				</div>
+		</div>
+    	
+    	<p style="clear: both"></p>
+    	<br/>
+    	<br/>
+    	<br/>
+    	<hr/>
+    	<hr/>
+    	<% include footer%>
+
+	</body>
+
+</html>

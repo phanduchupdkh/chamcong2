@@ -1,0 +1,55 @@
+<html>
+	 <head>
+	 	<link rel="icon" href="https://file.hstatic.net/1000287322/file/favicon_1_b09391da48434a18adff152c53967093.png" type="image/x-icon" />
+	 	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+	</head>
+	<body>
+		<div style='height:80px; background-color:#183544'>
+	    	<a href="/kenhnhathuoc" style='float:left; margin-right:10%'><img src='https://theme.hstatic.net/1000287322/1000371118/14/logo.png' alt="logo nhà thuốc chuẩn" style='height:70px' >Kênh Nhà Thuốc </a>
+		</div> 
+			<br/>
+			<br/>
+		<div class="container">	
+			<hr>
+				<h3>Các sản phẩm đang chờ xử lý</h3>
+				<br/>
+				<div class="row">
+					<%productwait.forEach(function(item){%>
+					<%var m=item.socongbo.toLowerCase().split('/').join('').split('đ').join('d');%>
+					<div class="col-12 col-sm-6 col-md-6" style="border:solid;">
+						<form method="POST" action="/adminn/productwait">
+							<div class="form-group">
+								<p>Url: <input class="form-control" type="text" name="url" value="<%=item.url%>"></p>
+							</div>
+							<div class="form-group">
+								<p>Link hình: <input class="form-control" type="text" name="linkhinh" value="<%=item.linkhinh%>"></p>
+							</div>
+			        		<p>loại sản phẩm: <%=item.loaisanpham%></p>
+			        		<input class="form-control" type="text" name="loaisanpham" value="<%=item.loaisanpham%>" style="display: none">
+			        		<p>Tên Sản Phẩm: <%=item.tensanpham%></p>
+			        		<input class="form-control" type="text" name="tensanpham" value="<%=item.tensanpham%>" style="display: none">
+			        		<p>Số công bố: <%=item.socongbo%></p>
+			        		<input class="form-control" type="text" name="socongbo" value="<%=item.socongbo%>" style="display: none">
+			        		<p>giá bán: <%=item.giaban%></p>
+			        		<input class="form-control" type="text" name="giaban" value="<%=item.giaban%>" style="display: none">
+			        		<button>Gửi</button>
+		        		</form>
+		        	</div>
+					<%});%>
+				</div>
+		</div>
+    	
+    	
+    	<p style="clear: both"></p>
+    	<br/>
+    	<br/>
+    	<br/>
+    	<hr/>
+    	<hr/>
+    	
+
+	</body>
+
+</html>

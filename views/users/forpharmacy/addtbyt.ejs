@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Cung Nhathuocchuan.com bán hàng miễn phí</title>
+<link rel="icon" href="https://file.hstatic.net/1000287322/file/favicon_1_b09391da48434a18adff152c53967093.png" type="image/x-icon"/>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+   	<% include header%>
+    <% include sidebar%>
+	<div style='height:50px'> </div>
+	<a href='#' style='margin: 50px 10% '>
+            	<img src='https://nest.com/support/images/misc-assets-icons/add-product-icon.png' style='width:50px'>
+            	Thêm Một Sản Phẩm 
+            	</a>
+        <div class="form-group" style='width: 84%; margin-left: 8%; margin-top: 50px'>
+            <label>Tải Hình ảnh lên </label><br/>
+            <input type="file" value="uploader" id="fileButton" name="linkhinh">
+            <img id="hinhanh" src="" style="width: 200px; display: none">
+        </div>
+	<form method="POST" style='width: 84%; margin-left: 8%;'>
+        <div class="form-group">
+        	<label>Tên Sản Phẩm</label>
+            <input class="form-control" id="tensanpham" name="tensanpham" placeholder="Tên Sản Phẩm" type="text" value="<%=values==''?values:values.tensanpham%>" required/>
+        </div>
+        
+        <%if (errors!==""){%>
+        <div class="alert alert-danger"><%=errors%></div>
+        <%};%>
+        <div class="form-group">
+            <label>Chọn Phân Loại : </label>
+            <select class="field-input" id="loaisanpham" name="loaisanpham">
+                <option value="Nhóm Khác" selected>Nhóm Khác</option>
+                <option value="Cốm Cho Trẻ Biếng Ăn">Cốm Cho Trẻ Biếng Ăn</option>
+                <option value="Collagen">Collagen</option>
+                <option value="Bổ Mọc Tóc">Bổ Mọc Tóc</option>                               
+                <option value="Bổ Trí Não">Bổ Trí Não</option>
+                <option value="Bổ Mắt">Bổ Mắt</option>
+                <option value="Bổ Gan Mật">Bổ Gan Mật</option>
+                <option value="Bổ Xương Khớp">Bổ Xương Khớp</option>
+                <option value="Bổ Thai">Bổ Thai</option>
+                <option value="Đường Tiêu Hóa">Đường Tiêu Hóa</option>
+                <option value="Giảm Cân An Toàn">Giảm Cân An Toàn</option>
+                <option value="Siro Cảm Ho">Siro Cảm Ho</option>
+                <option value="Sinh Lý Nam">Sinh Lý Nam</option>
+                <option value="Sinh Lý Nữ">Sinh Lý Nữ</option>
+                <option value="Tăng Cường Miễn Dịch">Tăng Cường Miễn Dịch</option>
+                <option value="Tiểu Đường Mỡ Máu">Tiểu Đường Mỡ Máu</option>
+                <option value="Thận Niệu">Thận Niệu</option>
+                <option value="Tim Mạch Huyết Áp">Tim Mạch Huyết Áp</option>
+                <option value="Trà Giảm Cân">Trà Giảm Cân</option>
+                <option value="Tăng Cân An Toàn">Tăng Cân An Toàn</option>
+                <option value="Viêm Đường Hô Hấp">Viêm Đường Hô Hấp</option>
+                <option value="Nhân Sâm Linh Chi">Nhân Sâm Linh Chi</option>
+                <option value="Đông Trùng Hạ Thảo">Đông Trùng Hạ Thảo</option>
+                <option value="Viên Uống Chống Nắng">Viên Uống Chống Nắng</option>
+                <option value="Viên Uống Trắng Da">Viên Uống Trắng Da</option>
+                <option value="Viên Uống Làm Đẹp Da">Viên Uống Làm Đẹp Da</option>
+                <option value="Vitamin Khoáng Chất">Vitamin Khoáng Chất</option>
+
+            </select>
+        </div>
+        <div class="form-group">
+        	<label>Giá Bán</label>
+            <input class="form-control" id="giaban" name="giaban" placeholder="Giá Bán (VNĐ)" type="number" />
+        </div>
+        <input style= "display:none" type="text" value="https://file.hstatic.net/1000287322/file/updating_4b3e39ad13974b06bd99d80bb44a2218.png" id="linkhinh" name="linkhinh">
+		<button>Lưu Trữ</button>
+      </form>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+    apiKey: "AIzaSyDXRS2qD8qI0_BWKmUt4UCeV5o_V1XFjEE",
+    authDomain: "dainam-96b9c.firebaseapp.com",
+    databaseURL: "https://dainam-96b9c.firebaseio.com",
+    projectId: "dainam-96b9c",
+    storageBucket: "dainam-96b9c.appspot.com",
+    messagingSenderId: "959430104014"
+    };
+    firebase.initializeApp(config);
+    //get element 
+    var uploader = document.getElementById("uploader");
+    var fileButton = document.getElementById("fileButton");
+    var hinhanh = document.getElementById("hinhanh");
+    var linkhinh = document.getElementById("linkhinh");
+
+    //Listen for file sellection 
+    fileButton.addEventListener("change", function(e){
+      //Get file 
+      console.log(e.target.files)
+      var file = e.target.files[0];
+      //Create a storage ref
+      var moonLanding = new Date();
+      let m = moonLanding.getTime();
+      const n = m+"-"+file.name;
+      storageRef = firebase.storage().ref("imgp/"+n);
+
+      //uploade file 
+      var task =  storageRef.put(file);
+      // update Progess bar 
+    task.then(function(value){
+      let img = 'https://firebasestorage.googleapis.com/v0/b/dainam-96b9c.appspot.com/o/imgp%2F'+n+'?alt=media'
+      hinhanh.src = img;
+      hinhanh.style = 'width: 200px; display: block';
+      linkhinh.value = img;
+    })
+    });
+    </script>
+</body>
+</html>

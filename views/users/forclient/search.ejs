@@ -1,0 +1,41 @@
+<html>
+	 <head>
+	 	<% include googleana%>
+	 	<link rel="icon" href="https://file.hstatic.net/1000287322/file/favicon_1_b09391da48434a18adff152c53967093.png" type="image/x-icon"/>
+	 	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+	</head>
+	<body>
+		<% include header%>
+		 
+			<br/>
+			<br/>
+		<div class="container">
+			<hr>
+				<h3>Tìm thấy <%=sanpham.length%> Kết quả</h3>
+				<br/>
+				<div class="row">
+					
+					<%sanpham.forEach(function(item){%>
+					<div class="col-4 col-sm-3 col-md-2 border border-muted">
+		        		<a href="/productsv/<%=item.url%>"><img src="<%=item.linkhinh%>" alt="<%=item.tensanpham%>" style='width: 100%'>
+		       			<p> <%=item.tensanpham%> </p></a>
+		       			<p>Giá Bán: <%=item.giaban.slice(0,-3).concat(".",item.giaban.slice(-3))%>đ </p>
+					</div>
+					<%});%>
+					
+				</div>
+		</div>
+    	
+    	<p style="clear: both"></p>
+    	<br/>
+    	<br/>
+    	<br/>
+    	<hr/>
+    	<hr/>
+    	<% include footer%>
+
+	</body>
+
+</html>

@@ -1,0 +1,333 @@
+<html>
+	 <head>
+	 	<% include googleana%>
+	 	<link rel="icon" href="https://file.hstatic.net/1000287322/file/favicon_1_b09391da48434a18adff152c53967093.png" type="image/x-icon"/>
+	 	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+	</head>
+	<body>
+		<% include header%> 
+			<br/>
+			<br/>
+		<div class="container">	
+			<hr>
+				<h3>Các nhà thuốc hợp tác với NhaThuocChuan.com</h3>
+				<br/>
+				<h4>Tại Quận Thủ Đức</h4>
+				<div class="row">
+					<%var dansachqh = users.filter(function(item){return item.maquanhuyen==="h762"})%>
+					<%dansachqh.forEach(function(item){%>
+					<div class="col-6 col-sm-4 col-md-3 border border-muted">
+		        		<p>Nhà Thuốc: <a href="/nhathuoc/<%=item.idnt%>"><%=item.tennhathuoc%></a></p>
+		        		<p>Số điện thoại: <%=item.phone%></p>
+		       			<p><%=item.address%>-<%=item.xaphuong%>-<%=item.quanhuyen%>-<%=item.tinhthanh%></p>
+					</div>
+						<%});%>
+				</div>
+
+				<h4>Tại Quận Tân Phú</h4>
+                <div class="row">
+                    <%dansachqh = users.filter(function(item){return item.maquanhuyen==="h767"})%>
+					<%dansachqh.forEach(function(item){%>
+					<div class="col-6 col-sm-4 col-md-3 border border-muted">
+		        		<p>Nhà Thuốc: <a href="/nhathuoc/<%=item.idnt%>"><%=item.tennhathuoc%></a></p>
+		        		<p>Số điện thoại: <%=item.phone%></p>
+		       			<p><%=item.address%>-<%=item.xaphuong%>-<%=item.quanhuyen%>-<%=item.tinhthanh%></p>
+					</div>
+						<%});%>
+				</div>
+
+				<h4>Tại Quận Tân Bình</h4>
+                <div class="row">
+                    <%dansachqh = users.filter(function(item){return item.maquanhuyen==="h766"})%>
+					<%dansachqh.forEach(function(item){%>
+					<div class="col-6 col-sm-4 col-md-3 border border-muted">
+		        		<p>Nhà Thuốc: <a href="/nhathuoc/<%=item.idnt%>"><%=item.tennhathuoc%></a></p>
+		        		<p>Số điện thoại: <%=item.phone%></p>
+		       			<p><%=item.address%>-<%=item.xaphuong%>-<%=item.quanhuyen%>-<%=item.tinhthanh%></p>
+					</div>
+						<%});%>
+				</div>
+
+				<h4>Tại Quận Phú Nhuận</h4>
+                <div class="row">
+                    <%dansachqh = users.filter(function(item){return item.maquanhuyen==="h768"})%>
+					<%dansachqh.forEach(function(item){%>
+					<div class="col-6 col-sm-4 col-md-3 border border-muted">
+		        		<p>Nhà Thuốc: <a href="/nhathuoc/<%=item.idnt%>"><%=item.tennhathuoc%></a></p>
+		        		<p>Số điện thoại: <%=item.phone%></p>
+		       			<p><%=item.address%>-<%=item.xaphuong%>-<%=item.quanhuyen%>-<%=item.tinhthanh%></p>
+					</div>
+						<%});%>
+				</div>
+
+				<h4>Tại Quận Gò Vấp</h4>
+                <div class="row">
+                    <%dansachqh = users.filter(function(item){return item.maquanhuyen==="h764"})%>
+					<%dansachqh.forEach(function(item){%>
+					<div class="col-6 col-sm-4 col-md-3 border border-muted">
+		        		<p>Nhà Thuốc: <a href="/nhathuoc/<%=item.idnt%>"><%=item.tennhathuoc%></a></p>
+		        		<p>Số điện thoại: <%=item.phone%></p>
+		       			<p><%=item.address%>-<%=item.xaphuong%>-<%=item.quanhuyen%>-<%=item.tinhthanh%></p>
+					</div>
+						<%});%>
+				</div>
+
+				<h4>Tại Quận Bình Thạnh</h4>
+                <div class="row">
+                    <%dansachqh = users.filter(function(item){return item.maquanhuyen==="h765"})%>
+					<%dansachqh.forEach(function(item){%>
+					<div class="col-6 col-sm-4 col-md-3 border border-muted">
+		        		<p>Nhà Thuốc: <a href="/nhathuoc/<%=item.idnt%>"><%=item.tennhathuoc%></a></p>
+		        		<p>Số điện thoại: <%=item.phone%></p>
+		       			<p><%=item.address%>-<%=item.xaphuong%>-<%=item.quanhuyen%>-<%=item.tinhthanh%></p>
+					</div>
+						<%});%>
+				</div>
+
+				<h4>Tại Quận Bình Tân</h4>
+                <div class="row">
+                    <%dansachqh = users.filter(function(item){return item.maquanhuyen==="h777"})%>
+					<%dansachqh.forEach(function(item){%>
+					<div class="col-6 col-sm-4 col-md-3 border border-muted">
+		        		<p>Nhà Thuốc: <a href="/nhathuoc/<%=item.idnt%>"><%=item.tennhathuoc%></a></p>
+		        		<p>Số điện thoại: <%=item.phone%></p>
+		       			<p><%=item.address%>-<%=item.xaphuong%>-<%=item.quanhuyen%>-<%=item.tinhthanh%></p>
+					</div>
+						<%});%>
+				</div>
+
+				<h4>Tại Quận 1</h4>
+                <div class="row">
+                    <%dansachqh = users.filter(function(item){return item.maquanhuyen==="h760"})%>
+					<%dansachqh.forEach(function(item){%>
+					<div class="col-6 col-sm-4 col-md-3 border border-muted">
+		        		<p>Nhà Thuốc: <a href="/nhathuoc/<%=item.idnt%>"><%=item.tennhathuoc%></a></p>
+		        		<p>Số điện thoại: <%=item.phone%></p>
+		       			<p><%=item.address%>-<%=item.xaphuong%>-<%=item.quanhuyen%>-<%=item.tinhthanh%></p>
+					</div>
+						<%});%>
+				</div>
+
+				<h4>Tại Quận 2</h4>
+                <div class="row">
+                    <%dansachqh = users.filter(function(item){return item.maquanhuyen==="h769"})%>
+					<%dansachqh.forEach(function(item){%>
+					<div class="col-6 col-sm-4 col-md-3 border border-muted">
+		        		<p>Nhà Thuốc: <a href="/nhathuoc/<%=item.idnt%>"><%=item.tennhathuoc%></a></p>
+		        		<p>Số điện thoại: <%=item.phone%></p>
+		       			<p><%=item.address%>-<%=item.xaphuong%>-<%=item.quanhuyen%>-<%=item.tinhthanh%></p>
+					</div>
+						<%});%>
+				</div>
+
+				<h4>Tại Quận 3</h4>
+                <div class="row">
+                    <%dansachqh = users.filter(function(item){return item.maquanhuyen==="h770"})%>
+					<%dansachqh.forEach(function(item){%>
+					<div class="col-6 col-sm-4 col-md-3 border border-muted">
+		        		<p>Nhà Thuốc: <a href="/nhathuoc/<%=item.idnt%>"><%=item.tennhathuoc%></a></p>
+		        		<p>Số điện thoại: <%=item.phone%></p>
+		       			<p><%=item.address%>-<%=item.xaphuong%>-<%=item.quanhuyen%>-<%=item.tinhthanh%></p>
+					</div>
+						<%});%>
+				</div>
+
+				<h4>Tại Quận 4</h4>
+                <div class="row">
+                    <%dansachqh = users.filter(function(item){return item.maquanhuyen==="h773"})%>
+					<%dansachqh.forEach(function(item){%>
+					<div class="col-6 col-sm-4 col-md-3 border border-muted">
+		        		<p>Nhà Thuốc: <a href="/nhathuoc/<%=item.idnt%>"><%=item.tennhathuoc%></a></p>
+		        		<p>Số điện thoại: <%=item.phone%></p>
+		       			<p><%=item.address%>-<%=item.xaphuong%>-<%=item.quanhuyen%>-<%=item.tinhthanh%></p>
+					</div>
+						<%});%>
+				</div>
+
+				<h4>Tại Quận 5</h4>
+                <div class="row">
+                    <%dansachqh = users.filter(function(item){return item.maquanhuyen==="h774"})%>
+					<%dansachqh.forEach(function(item){%>
+					<div class="col-6 col-sm-4 col-md-3 border border-muted">
+		        		<p>Nhà Thuốc: <a href="/nhathuoc/<%=item.idnt%>"><%=item.tennhathuoc%></a></p>
+		        		<p>Số điện thoại: <%=item.phone%></p>
+		       			<p><%=item.address%>-<%=item.xaphuong%>-<%=item.quanhuyen%>-<%=item.tinhthanh%></p>
+					</div>
+						<%});%>
+				</div>
+
+				<h4>Tại Quận 6</h4>
+                <div class="row">
+                    <%dansachqh = users.filter(function(item){return item.maquanhuyen==="h775"})%>
+					<%dansachqh.forEach(function(item){%>
+					<div class="col-6 col-sm-4 col-md-3 border border-muted">
+		        		<p>Nhà Thuốc: <a href="/nhathuoc/<%=item.idnt%>"><%=item.tennhathuoc%></a></p>
+		        		<p>Số điện thoại: <%=item.phone%></p>
+		       			<p><%=item.address%>-<%=item.xaphuong%>-<%=item.quanhuyen%>-<%=item.tinhthanh%></p>
+					</div>
+						<%});%>
+				</div>
+
+				<h4>Tại Quận 7</h4>
+                <div class="row">
+                    <%dansachqh = users.filter(function(item){return item.maquanhuyen==="h778"})%>
+					<%dansachqh.forEach(function(item){%>
+					<div class="col-6 col-sm-4 col-md-3 border border-muted">
+		        		<p>Nhà Thuốc: <a href="/nhathuoc/<%=item.idnt%>"><%=item.tennhathuoc%></a></p>
+		        		<p>Số điện thoại: <%=item.phone%></p>
+		       			<p><%=item.address%>-<%=item.xaphuong%>-<%=item.quanhuyen%>-<%=item.tinhthanh%></p>
+					</div>
+						<%});%>
+				</div>
+
+				<h4>Tại Quận 8</h4>
+                <div class="row">
+                    <%dansachqh = users.filter(function(item){return item.maquanhuyen==="h776"})%>
+					<%dansachqh.forEach(function(item){%>
+					<div class="col-6 col-sm-4 col-md-3 border border-muted">
+		        		<p>Nhà Thuốc: <a href="/nhathuoc/<%=item.idnt%>"><%=item.tennhathuoc%></a></p>
+		        		<p>Số điện thoại: <%=item.phone%></p>
+		       			<p><%=item.address%>-<%=item.xaphuong%>-<%=item.quanhuyen%>-<%=item.tinhthanh%></p>
+					</div>
+						<%});%>
+				</div>
+
+				<h4>Tại Quận 9</h4>
+                <div class="row">
+                    <%dansachqh = users.filter(function(item){return item.maquanhuyen==="h763"})%>
+					<%dansachqh.forEach(function(item){%>
+					<div class="col-6 col-sm-4 col-md-3 border border-muted">
+		        		<p>Nhà Thuốc: <a href="/nhathuoc/<%=item.idnt%>"><%=item.tennhathuoc%></a></p>
+		        		<p>Số điện thoại: <%=item.phone%></p>
+		       			<p><%=item.address%>-<%=item.xaphuong%>-<%=item.quanhuyen%>-<%=item.tinhthanh%></p>
+					</div>
+						<%});%>
+				</div>
+
+				<h4>Tại Quận 10</h4>
+                <div class="row">
+                    <%dansachqh = users.filter(function(item){return item.maquanhuyen==="h771"})%>
+					<%dansachqh.forEach(function(item){%>
+					<div class="col-6 col-sm-4 col-md-3 border border-muted">
+		        		<p>Nhà Thuốc: <a href="/nhathuoc/<%=item.idnt%>"><%=item.tennhathuoc%></a></p>
+		        		<p>Số điện thoại: <%=item.phone%></p>
+		       			<p><%=item.address%>-<%=item.xaphuong%>-<%=item.quanhuyen%>-<%=item.tinhthanh%></p>
+					</div>
+						<%});%>
+				</div>
+
+				<h4>Tại Quận 11</h4>
+                <div class="row">
+                    <%dansachqh = users.filter(function(item){return item.maquanhuyen==="h772"})%>
+					<%dansachqh.forEach(function(item){%>
+					<div class="col-6 col-sm-4 col-md-3 border border-muted">
+		        		<p>Nhà Thuốc: <a href="/nhathuoc/<%=item.idnt%>"><%=item.tennhathuoc%></a></p>
+		        		<p>Số điện thoại: <%=item.phone%></p>
+		       			<p><%=item.address%>-<%=item.xaphuong%>-<%=item.quanhuyen%>-<%=item.tinhthanh%></p>
+					</div>
+						<%});%>
+				</div>
+
+				<h4>Tại Quận 12</h4>
+                <div class="row">
+                    <%dansachqh = users.filter(function(item){return item.maquanhuyen==="h761"})%>
+					<%dansachqh.forEach(function(item){%>
+					<div class="col-6 col-sm-4 col-md-3 border border-muted">
+		        		<p>Nhà Thuốc: <a href="/nhathuoc/<%=item.idnt%>"><%=item.tennhathuoc%></a></p>
+		        		<p>Số điện thoại: <%=item.phone%></p>
+		       			<p><%=item.address%>-<%=item.xaphuong%>-<%=item.quanhuyen%>-<%=item.tinhthanh%></p>
+					</div>
+						<%});%>
+				</div>
+
+				<h4>Tại Huyện Nhà Bè</h4>
+                <div class="row">
+                    <%dansachqh = users.filter(function(item){return item.maquanhuyen==="h786"})%>
+					<%dansachqh.forEach(function(item){%>
+					<div class="col-6 col-sm-4 col-md-3 border border-muted">
+		        		<p>Nhà Thuốc: <a href="/nhathuoc/<%=item.idnt%>"><%=item.tennhathuoc%></a></p>
+		        		<p>Số điện thoại: <%=item.phone%></p>
+		       			<p><%=item.address%>-<%=item.xaphuong%>-<%=item.quanhuyen%>-<%=item.tinhthanh%></p>
+					</div>
+						<%});%>
+				</div>
+
+				<h4>Tại Huyện Hooc Môn</h4>
+                <div class="row">
+                    <%dansachqh = users.filter(function(item){return item.maquanhuyen==="h784"})%>
+					<%dansachqh.forEach(function(item){%>
+					<div class="col-6 col-sm-4 col-md-3 border border-muted">
+		        		<p>Nhà Thuốc: <a href="/nhathuoc/<%=item.idnt%>"><%=item.tennhathuoc%></a></p>
+		        		<p>Số điện thoại: <%=item.phone%></p>
+		       			<p><%=item.address%>-<%=item.xaphuong%>-<%=item.quanhuyen%>-<%=item.tinhthanh%></p>
+					</div>
+						<%});%>
+				</div>
+
+				<h4>Tại Huyện Củ Chi</h4>
+                <div class="row">
+                    <%dansachqh = users.filter(function(item){return item.maquanhuyen==="h783"})%>
+					<%dansachqh.forEach(function(item){%>
+					<div class="col-6 col-sm-4 col-md-3 border border-muted">
+		        		<p>Nhà Thuốc: <a href="/nhathuoc/<%=item.idnt%>"><%=item.tennhathuoc%></a></p>
+		        		<p>Số điện thoại: <%=item.phone%></p>
+		       			<p><%=item.address%>-<%=item.xaphuong%>-<%=item.quanhuyen%>-<%=item.tinhthanh%></p>
+					</div>
+						<%});%>
+				</div>
+
+				<h4>Tại Huyện Bình Chánh</h4>
+                <div class="row">
+                    <%dansachqh = users.filter(function(item){return item.maquanhuyen==="h785"})%>
+					<%dansachqh.forEach(function(item){%>
+					<div class="col-6 col-sm-4 col-md-3 border border-muted">
+		        		<p>Nhà Thuốc: <a href="/nhathuoc/<%=item.idnt%>"><%=item.tennhathuoc%></a></p>
+		        		<p>Số điện thoại: <%=item.phone%></p>
+		       			<p><%=item.address%>-<%=item.xaphuong%>-<%=item.quanhuyen%>-<%=item.tinhthanh%></p>
+					</div>
+						<%});%>
+				</div>
+
+				<h4>Tại Huyện Cần Giờ </h4>
+                <div class="row">
+                    <%dansachqh = users.filter(function(item){return item.maquanhuyen==="h787"})%>
+					<%dansachqh.forEach(function(item){%>
+					<div class="col-6 col-sm-4 col-md-3 border border-muted">
+		        		<p>Nhà Thuốc: <a href="/nhathuoc/<%=item.idnt%>"><%=item.tennhathuoc%></a></p>
+		        		<p>Số điện thoại: <%=item.phone%></p>
+		       			<p><%=item.address%>-<%=item.xaphuong%>-<%=item.quanhuyen%>-<%=item.tinhthanh%></p>
+					</div>
+						<%});%>
+				</div>
+
+				<h3>Tại các khu vực khác </h4>
+                <div class="row">
+                    <%dansachqh = users.filter(function(item){return item.matinhthanh!=="t79"})%>
+					<%dansachqh.forEach(function(item){%>
+					<div class="col-6 col-sm-4 col-md-3 border border-muted">
+		        		<p>Nhà Thuốc: <a href="/nhathuoc/<%=item.idnt%>"><%=item.tennhathuoc%></a></p>
+		        		<p>Số điện thoại: <%=item.phone%></p>
+		       			<p><%=item.address%>-<%=item.xaphuong%>-<%=item.quanhuyen%>-<%=item.tinhthanh%></p>
+					</div>
+						<%});%>
+				</div>
+
+
+
+
+
+		</div>
+    	
+    	<p style="clear: both"></p>
+    	<br/>
+    	<br/>
+    	<br/>
+    	<hr/>
+    	<hr/>
+    	<% include footer%>
+
+	</body>
+
+</html>

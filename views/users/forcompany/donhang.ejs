@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Cung Nhathuocchuan.com bán hàng miễn phí</title>
+<link rel="icon" href="https://file.hstatic.net/1000287322/file/favicon_1_b09391da48434a18adff152c53967093.png" type="image/x-icon"/>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+
+</head>
+<body>
+   
+    <% include header%>
+    <% include sidebar%>
+
+<div style='height:50px'> </div>
+
+<div class="container">
+    
+       
+       <%var dmucdon = company.donhang%>
+</table>
+    <div class="container pt-5">
+    	<h2>Danh Sách Đơn Hàng</h2>
+    	<table class="table">
+        <tr>
+            <th>Sản Phẩm</th>
+            <th>Tên khách hàng</th>
+            <th>Số Lượng</th>
+            <th>Địa chỉ</th>
+            <th>Số ĐT</th>
+            <th>Email</th>
+            <th>Tổng số tiền</th>
+            <th>Sửa/Xóa</th>
+        </tr>
+        
+    
+            <%dmucdon.forEach(function(item){%>
+           
+        <tr>
+            <td><a href="/congty/<%=company.idcomp%>/<%=item.url%>"><%=item.tensanpham%></a></td>
+            <td><%=item.name%></td>
+            <td><%=item.soluong%></td>
+            <td><%=item.address%></td>
+            <td><%=item.phone%></td>
+            <td><%=item.email%></td>
+            <td><%=item.tongtien%></td>
+            <td>
+                <a onclick="return confirm('Bạn có chắc chắn xóa không?')" href="/kenhcompany/xoadon/<%=item.id%>">Xóa</a>
+            </td>
+          </tr>
+            <%});%>
+        	
+            
+      
+       
+
+    </table>
+</div>
+<br/><br/><br/>
+<hr/>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cung Nhathuocchuan.com bán hàng miễn phí</title>
+    <link rel="icon" href="https://file.hstatic.net/1000287322/file/favicon_1_b09391da48434a18adff152c53967093.png" type="image/x-icon"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+</head>
+<body>
+   	<% include header%>
+    <% include sidebar%>
+	
+		 <br/>
+<div class="container">
+    <h3>Tích Vào Sản Phẩm Mà Bạn Có & Ấn Nút Lưu</h3><br/><br/>
+    <div class="row">
+    	<%productserver.forEach(function(item,index){%>
+    	<div class="col-3 col-sm-3 col-md-2">
+    	   <%var m=item.socongbo.toLowerCase().split('/').join('').split('đ').join('d');%>
+            <img id="<%=m%>" src="<%=item.linkhinh%>" style='width: 98%' onclick="chayhamcheckbox(this.id)"> 
+        
+    	   <input id="<%=m%>sp" type="checkbox" name="sanpham" value="<%=item.socongbo%>"> <br/>
+           Giá: <input id="<%=m%>gia" type="number" name="giaban" value=0 style="width: 65%">
+           <p> <%=item.tensanpham%> </p>
+    	</div>
+
+        <%});%>
+    </div>
+    <br/>
+    <br/>
+    <a class="fixed-bottom text-center " href="/kenhnhathuoc"><button  id="guilenserver" class="btn btn-danger pt-3 pb-3 pr-3 pl-3">Lưu Danh Mục</button> </a>
+<div style="height: 300px">Thank you!</div>
+</div>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+ 	<script language="javascript">
+        function chayhamcheckbox(item){
+            item=item+'sp';
+            a = document.getElementById(item);
+            if (a.checked === true) {a.checked = false} else {a.checked = true};
+        };
+
+        document.getElementById('guilenserver').onclick = function()
+            {
+                // Khai báo tham số
+            var scb = document.getElementsByName('sanpham');
+            var gia = document.getElementsByName('giaban');
+            var result = []; 
+                // Lặp qua từng checkbox để lấy giá trị
+                const n=scb.length;
+                for (var i = 0; i < n; i++){
+
+                    if (scb[i].checked === true){
+                        result.push({socongbo: scb[i].value, giaban: gia[i].value});
+                    }
+                }
+                 
+                // In ra kết quả
+                    
+            axios.post('/kenhnhathuoc/addlist/<%=idlist%>',result);
+          
+             };
+        </script>
+</body>
+</html>

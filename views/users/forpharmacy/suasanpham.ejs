@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Cung Nhathuocchuan.com bán hàng miễn phí</title>
+<link rel="icon" href="https://file.hstatic.net/1000287322/file/favicon_1_b09391da48434a18adff152c53967093.png" type="image/x-icon"/>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <% include header%>
+    <% include sidebar%>
+    
+	<div style='height:50px'> </div>
+    <h1>Sửa Sản Phẩm</h1>
+	<form method="POST" style='width: 84%; margin-left: 8%; margin-top: 50px'>
+        <div style='width: 80px'>
+            <img src="<%=values.linkhinh%>" style='width: 80px'>
+        </div>
+        <div class="form-group">
+        	<label>Tên Sản Phẩm</label>
+            <input class="form-control" id="tensanpham" name="tensanpham" placeholder="Tên Sản Phẩm" type="text" value="<%=values.tensanpham%>" required/>
+        </div>
+        <div class="form-group">
+            <label>Số Công Bố: SCB / Năm công bố :</label>
+            <span><%=values.socongbo%></span>
+        </div>
+        <input type="text" style="display: none" name="socongbo" value="<%=values.socongbo%>">
+        <input type="text" style="display: none" name="linkhinh" value="<%=values.linkhinh%>">
+        <%if (errors!==""){%>
+        <div class="alert alert-danger"><%=errors%></div>
+        <%};%>
+        <div class="form-group">
+            <label>Chọn Phân Loại : </label>
+            <select class="field-input" id="loaisanpham" name="loaisanpham" value="<%=values.loaisanpham%>">
+                <option value="<%=values.loaisanpham%>" selected><%=values.loaisanpham%></option>
+                <option value="Nhóm Khác">Nhóm Khác</option>
+                <option value="Cốm Cho Trẻ Biếng Ăn">Cốm Cho Trẻ Biếng Ăn</option>
+                <option value="Collagen">Collagen</option>
+                <option value="Bổ Mọc Tóc">Bổ Mọc Tóc</option>                               
+                <option value="Bổ Trí Não">Bổ Trí Não</option>
+                <option value="Bổ Mắt">Bổ Mắt</option>
+                <option value="Bổ Gan Mật">Bổ Gan Mật</option>
+                <option value="Bổ Xương Khớp">Bổ Xương Khớp</option>
+                <option value="Bổ Thai">Bổ Thai</option>
+                <option value="Đường Tiêu Hóa">Đường Tiêu Hóa</option>
+                <option value="Giảm Cân An Toàn">Giảm Cân An Toàn</option>
+                <option value="Siro Cảm Ho">Siro Cảm Ho</option>
+                <option value="Sinh Lý Nam">Sinh Lý Nam</option>
+                <option value="Sinh Lý Nữ">Sinh Lý Nữ</option>
+                <option value="Tăng Cường Miễn Dịch">Tăng Cường Miễn Dịch</option>
+                <option value="Tiểu Đường Mỡ Máu">Tiểu Đường Mỡ Máu</option>
+                <option value="Thận Niệu">Thận Niệu</option>
+                <option value="Tim Mạch Huyết Áp">Tim Mạch Huyết Áp</option>
+                <option value="Trà Giảm Cân">Trà Giảm Cân</option>
+                <option value="Tăng Cân An Toàn">Tăng Cân An Toàn</option>
+                <option value="Viêm Đường Hô Hấp">Viêm Đường Hô Hấp</option>
+                <option value="Nhân Sâm Linh Chi">Nhân Sâm Linh Chi</option>
+                <option value="Đông Trùng Hạ Thảo">Đông Trùng Hạ Thảo</option>
+                <option value="Viên Uống Chống Nắng">Viên Uống Chống Nắng</option>
+                <option value="Viên Uống Trắng Da">Viên Uống Trắng Da</option>
+                <option value="Viên Uống Làm Đẹp Da">Viên Uống Làm Đẹp Da</option>
+                <option value="Vitamin Khoáng Chất">Vitamin Khoáng Chất</option>
+
+            </select>
+        </div>
+        <div class="form-group">
+        	<label>Giá Bán</label>
+            <input class="form-control" id="giaban" name="giaban" value="<%=values.giaban%>" type="number" />
+        </div>
+		<button>Lưu Trữ</button>
+      </form>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+</body>
+</html>

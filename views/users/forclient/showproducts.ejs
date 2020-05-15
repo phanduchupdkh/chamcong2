@@ -1,0 +1,73 @@
+<html>
+	 <head>
+	 	<% include googleana%>
+	 	<link rel="icon" href="https://file.hstatic.net/1000287322/file/favicon_1_b09391da48434a18adff152c53967093.png" type="image/x-icon"/>
+	 	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+	</head>
+	<body>
+		<% include headernt%>
+		
+		 
+			
+		<div class="container pt-5">
+				<h3 class="pt-5">Nhà Thuốc: <strong> <%=nhathuoc.tennhathuoc%></strong> kính chào quý khách</h3>
+
+				<ul>Để mua hàng quý khách có thể thực hiện theo các cách sau:
+					<li>
+						<strong>Cách 1: </strong> Đến trực tiếp nhà thuốc <strong> <%=nhathuoc.tennhathuoc%></strong> tại địa chỉ: <%=nhathuoc.address%> <%=xaphuong%> - <%=quanhuyen%> - <%=tinhthanh%>
+			 		</li>
+
+					<li>
+						<strong>Cách 2: </strong> Gọi điện thoại trực tiếp cho số <%=nhathuoc.phone%>
+					</li>
+				</ul>
+
+			<hr>
+				<h3>Danh Mục Sản Phẩm Có Tại Nhà Thuốc:</h3>
+				<div class="row">
+
+					<%nhathuoc.danhsachsp.forEach(function(item){%>
+             		<%let kt = productserver.find(function(item2){
+                		return item2.socongbo === item.socongbo;
+                		});
+            		let linkhinh="https://file.hstatic.net/1000287322/file/updating_4b3e39ad13974b06bd99d80bb44a2218.png";
+            		if (kt) {linkhinh=kt.linkhinh}        
+            		if (item.linkhinh !== "https://file.hstatic.net/1000287322/file/updating_4b3e39ad13974b06bd99d80bb44a2218.png") {linkhinh = item.linkhinh};
+            		%>
+					<div class="col-4 col-sm-3 col-md-2 border border-muted">
+		        		<a href="/nhathuoc/<%=nhathuoc.idnt%>/<%=item.url%>"><img src="<%=linkhinh%>" alt="<%=item.tensanpham%>" style='width: 100%'>
+		       			<p> <%=item.tensanpham%> </p></a>
+		       			<p>Giá Bán: <%=item.giaban.slice(0,-3).concat(".",item.giaban.slice(-3))%>đ </p>
+		       			<form action="/cart/add" method="POST">
+                    		<input class="d-none" type="number" value="1" name="tentacles">
+		                    <input class="d-none" value="<%=nhathuoc.idnt%>" name="idnhathuoc">
+		                    <input class="d-none" value="<%=item.url%>" name="urlsp">
+
+		                    <button style="font-size: 12px" class="btn btn-warning list-inline" >
+                        		<img style="width:10%" src="https://image.flaticon.com/icons/svg/134/134561.svg" atl="chọn mua">
+                         		Chọn Mua
+                   			</button> 
+                		</form>
+					</div>
+
+
+
+
+						<%});%>
+				</div>
+		</div>
+    	
+    	  
+    	   <br/>
+        <br/>
+        <% include danhgianhathuoc%>
+        <br/>
+        <hr/>
+        <hr/>
+    <% include footer%>
+    <div class="pt-5 pb-5"></div>
+	</body>
+
+</html>
