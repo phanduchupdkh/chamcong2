@@ -21,7 +21,7 @@
     <%})%>
     <script>
         function handleDiemDanh() {
-            fetch('https://chamcong.herokuapp.com/', { mode: 'no-cors', method: 'POST', body: 'a=1' })
+            fetch(window.location.href, { mode: 'no-cors', method: 'POST', body: 'a=1' })
                 .then(res => res.json())
                 .then(json => console.log(json.ip))
         } 

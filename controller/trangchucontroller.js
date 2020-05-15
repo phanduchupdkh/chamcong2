@@ -52,8 +52,8 @@ module.exports.postindex = async function (req, res) {
 		.exec((err, result) => {
 			console.log(result);
 		});
-
-	res.json({ diemdanh });
+	console.log(diemdanh)
+	res.send(diemdanh);
 };
 
 module.exports.search = async function (req, res) {
