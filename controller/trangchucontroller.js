@@ -40,19 +40,16 @@ module.exports.postindex = async function (req, res) {
 	const dateCheck = itNow.getDate() > 9 ? `${itNow.getDate()}` : `0${itNow.getDate()}`
 	const monthCheck = itNow.getMonth() + 1 > 9 ? `${itNow.getMonth() + 1}` : `0${itNow.getMonth() + 1}`
 	const dateNeedSave = `${dateCheck}${monthCheck}${itNow.getFullYear()}`
-	console.log(dateNeedSave)
-	let objTimeCheck = {}
-	objTimeCheck[dateNeedSave] = {
+	diemdanh.push({
+		ngay: dateNeedSave,
 		checkIn: timeCheckOut,
 		ip
-	}
-	diemdanh.push( objTimeCheck)
+	})
 
 	Nhanviens.update({ "_id": isTrueUser._id }, { diemdanh })
 		.exec((err, result) => {
 			console.log(result);
 		});
-	console.log(diemdanh)
 	res.send(diemdanh);
 };
 

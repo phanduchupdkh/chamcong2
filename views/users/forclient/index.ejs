@@ -14,17 +14,45 @@
     </p>
     <a href="./dangxuat">Đăng xuất</a>
     <hr />
-    <%[{ngay: "24/05/2020", ngaycong: 4},{ngay: "23/05/2020", ngaycong: 9}].forEach(item=>{%>
-    <p>
-        <%=item.ngay%> : <%=item.ngaycong%>
-    </p>
-    <%})%>
+    <div id='chitiet'>
+
+    </div>
+
     <script>
+        let chiTiet = document.getElementById('chitiet')
+        console.log(chiTiet)
         function handleDiemDanh() {
             fetch(window.location.href, { mode: 'no-cors', method: 'POST', body: 'a=1' })
                 .then(res => res.json())
-                .then(json => console.log(json.ip))
-        } 
+                .then(arrCong => {
+                    let resu = ''
+                    let arrResu = []
+                    let hashNgay = {}
+                    arrCong.forEach(item => {
+                        if (!hashNgay[item.ngay]) {
+                            hashNgay[item.ngay] = { start: item.checkIn, end: item.checkIn }
+                        } else {
+                            if (item.checkIn < hashNgay[item.ngay].start) {
+                                hashNgay[item.ngay].start = item.checkIn
+                            } else {
+                                if (item.checkIn > hashNgay[item.ngay].end) {
+                                    hashNgay[item.ngay].end = item.checkIn
+                                }
+                            }
+                        }
+                    })
+                    for (let elem in hashNgay) {
+                        console.log(elem)
+                        resu += `<p>Ngày:  ${elem} </p>
+                            <p>Giờ Checkin:  ${new Date(hashNgay[elem].start)} </p>
+                            <p>Giờ checkout:  ${new Date(hashNgay[elem].end)}</p>
+                            <p>Tổng: ${((hashNgay[elem].end-hashNgay[elem].start)/1000/60/60).toFixed(2)} Giờ</p>
+                            <hr/>`
+                    }
+                    chiTiet.innerHTML = resu
+                })
+        }
+        handleDiemDanh()
     </script>
 </body>
 
